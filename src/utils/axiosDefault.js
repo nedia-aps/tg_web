@@ -1,16 +1,18 @@
-import axios from "axios";
+import axios from 'axios';
 
 const configureAxiosDefaults = () => {
   /* attach token to each request header if request is other than login/register */
   axios.interceptors.request.use(
     cfg => {
-      cfg.headers.Pragma = "no-cache";
+      cfg.headers.Pragma = 'no-cache';
       const url = cfg.url.toLowerCase();
       if (
-        url.endsWith("Login") ||
-        url.endsWith("register") ||
-        url.endsWith("resetpassword")
-      ) { return cfg; }
+        url.endsWith('Login') ||
+        url.endsWith('register') ||
+        url.endsWith('resetpassword')
+      ) {
+        return cfg;
+      }
 
       if (getAuthToken === null) return cfg;
 
@@ -21,18 +23,15 @@ const configureAxiosDefaults = () => {
 
       return cfg;
     },
-    err => Promise.reject(err)
+    err => Promise.reject(err),
   );
 
-  axios.interceptors.request.use(cfg => {
-    cfg.data = cfg.data;
-    return cfg;
-  });
+  axios.interceptors.request.use(cfg => cfg);
 };
 
 const getAuthToken = () => {
   try {
-    const state = localStorage.getItem("state");
+    const state = localStorage.getItem('state');
     if (state) {
       return state;
     }

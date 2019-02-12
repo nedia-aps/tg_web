@@ -28,18 +28,30 @@
     "import/no-unresolved": "error",
     "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
-    "jsx-a11y/href-no-hash": [0],
     "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
     "jsx-a11y/click-events-have-key-events": "warn",
     "jsx-a11y/media-has-caption": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "components": ["Label"],
+        "required": {
+          "some": ["nesting", "id"]
+        },
+        "allowChildren": false
+      }
+    ],
     "no-console": "off",
     "no-use-before-define": "off",
     "no-multi-assign": "off",
-    "no-underscore-dangle": [2, { "allow": ["__"] }],
+    "no-underscore-dangle": "off",
+    "no-param-reassign": [2, { "props": false }],
     "promise/param-names": "error",
     "promise/always-return": "error",
     "promise/catch-or-return": "error",
     "promise/no-native": "off",
+    "react/button-has-type": ["error", { "reset": true }],
     "react/sort-comp": [
       "error",
       {
@@ -67,6 +79,7 @@
       "node": {
         "moduleDirectory": ["node_modules", "app"]
       }
-    }
+    },
+    "polyfills": ["promises"]
   }
 }
