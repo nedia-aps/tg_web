@@ -20,6 +20,7 @@ class MissingLog extends Component {
    // this.props.classAction.formChanged({ prop: "userId", value: id });
     // console.log(this.props.userObject);
     //window.location = "/#/components/user";
+    
   }
   constructor(props, context) {
     super(props, context);
