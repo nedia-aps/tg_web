@@ -58,7 +58,7 @@ class Header extends Component {
         >
           &#9776;
         </button>
-        <a className="navbar-brand" href="#" />
+        <NavLink className="navbar-brand" to="/" />
         <ul className="nav navbar-nav d-md-down-none">
           <li className="nav-item">
             <button
@@ -70,17 +70,20 @@ class Header extends Component {
             </button>
           </li>
           <li className="nav-item px-3">
-            <a className="nav-link" href="#">
-            Statistik
-            </a>
+            <NavLink
+              to={"/dashboard"}
+              className="nav-link"
+            >
+              Statistik
+            </NavLink>
           </li>
           <li className="nav-item px-3">
-               <NavLink
-                to={"/undervisere"}
-                className="nav-link"
-              >
+            <NavLink
+              to={"/undervisere"}
+              className="nav-link"
+            >
               Instruktører
-              </NavLink>
+            </NavLink>
           </li>
           <li className="nav-item px-3">
           <NavLink

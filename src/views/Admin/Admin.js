@@ -27,8 +27,7 @@ class Admin extends Component {
     );
   }
 }
-const mapStateToProps = ({ accountReducerObject }) => {
-  const {} = accountReducerObject;
+const mapStateToProps = () => {
   return {};
 };
 const mapDispatchToProps = dispatch => {

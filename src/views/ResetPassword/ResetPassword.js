@@ -21,17 +21,14 @@ class ResetPassword extends Component {
       <div className="animated fadeIn">
         <div className="row">
           <div className="col-md-6">
-
-                <ResetForm onSubmit={this.handleSubmit}/>
-
+            <ResetForm onSubmit={this.handleSubmit}/>
           </div>
         </div>
       </div>
     );
   }
 }
-const mapStateToProps = ({ accountReducerObject }) => {
-  const {} = accountReducerObject;
+const mapStateToProps = () => {
   return {};
 };
 const mapDispatchToProps = dispatch => {

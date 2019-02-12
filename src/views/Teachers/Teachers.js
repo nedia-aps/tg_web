@@ -51,23 +51,27 @@ class Teachers extends Component {
         <img src={require('../../images/loading.gif')} alt="indlæser" width="100" height="100" />
         </Loadmask>
       <div className="animated fadeIn">
-      <Modal isOpen={danger}  className={'modal-danger ' + this.props.className}>
-                  <ModalHeader toggle={this.toggleDanger}>Slet</ModalHeader>
-                  <ModalBody>
-                    Er du sikker på du vil slette denne burger?
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button color="primary" onClick={this.deleteConfirm}>Slet</Button>{' '}
-                    <Button color="secondary" onClick={()=>this.setState({danger: !danger})}>Fortryd</Button>
-                  </ModalFooter>
-                </Modal>
+        <Modal isOpen={danger}  className={'modal-danger ' + this.props.className}>
+          <ModalHeader toggle={this.toggleDanger}>Slet</ModalHeader>
+          <ModalBody>
+            Er du sikker på du vil slette denne burger?
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={this.deleteConfirm}>Slet</Button>{' '}
+            <Button color="secondary" onClick={()=>this.setState({danger: !danger})}>Fortryd</Button>
+          </ModalFooter>
+        </Modal>
         <div className="row">
           <div className="col-lg-12">
             <div className="card">
               <div className="card-header">
                 <a
-                  href="javascript:void(0)"
-                  onClick={() => this.props.history.push("teacher")}
+                  href=""
+                  onClick={(e) => {
+                      e.preventDefault();
+                      this.props.history.push("teacher")
+                    }
+                  }
                 >
                   <i className="icon-user-follow icons font-2xl d-block" />
                 </a>

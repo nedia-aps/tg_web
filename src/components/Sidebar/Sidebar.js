@@ -29,7 +29,7 @@ class Sidebar extends Component {
                 activeClassName="active"
               >
                 <i className="icon-speedometer" /> Statistik{" "}
-                </NavLink>
+              </NavLink>
             </li>
 
             <li className="nav-item">

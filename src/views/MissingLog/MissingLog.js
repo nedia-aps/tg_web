@@ -17,7 +17,7 @@ class MissingLog extends Component {
     const{history}=this.props;
     this.props.classAction.formChanged({ prop: "classId", value: id });
     history.push("/timelog");
-   // this.props.classAction.formChanged({ prop: "userId", value: id });
+    // this.props.classAction.formChanged({ prop: "userId", value: id });
     // console.log(this.props.userObject);
     //window.location = "/#/components/user";
     
