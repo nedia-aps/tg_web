@@ -21,6 +21,7 @@ class Teachers extends Component {
     this.changeSort = this.changeSort.bind(this);
   }
 
+  // eslint-disable-next-line
   componentWillMount() {
     const { teacherAction } = this.props;
     teacherAction.getTeachder();

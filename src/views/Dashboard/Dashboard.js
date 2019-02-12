@@ -15,6 +15,7 @@ class Dashboard extends Component {
     };
   }
 
+  // eslint-disable-next-line
   componentWillMount() {
     const { classAction } = this.props;
     classAction.dashBordData();

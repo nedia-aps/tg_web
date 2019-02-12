@@ -14,6 +14,7 @@ class Classess extends Component {
     this.deleteConfirm = this.deleteConfirm.bind(this);
   }
 
+  // eslint-disable-next-line
   componentWillMount() {
     const { classAction } = this.props;
     classAction.getClasses();

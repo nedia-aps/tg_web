@@ -12,6 +12,7 @@ class TimeLog extends Component {
     this.handleLogClick = this.handleLogClick.bind(this);
   }
 
+  // eslint-disable-next-line
   componentWillMount() {
     const { classId, classAction } = this.props;
     classAction.getClassLog(classId);

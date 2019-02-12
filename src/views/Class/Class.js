@@ -38,6 +38,7 @@ class Class extends Component {
     // this.onClassCategoryChange = this.endDateChange.bind(this);
   }
 
+  // eslint-disable-next-line
   componentWillMount() {
     const { classId, classAction } = this.props;
     if (classId) {
