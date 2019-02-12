@@ -464,7 +464,7 @@ class Class extends Component {
                         className="col-md-3 form-control-label"
                         htmlFor="time-input"
                       >
-                      Sluttid
+                        Sluttid
                       </label>
                       <div className="col-md-9">
                         <select
@@ -539,6 +539,7 @@ class Class extends Component {
                           selected={startDate}
                           onChange={this.createDateChange}
                           className="form-control"
+                          dateFormat="DD/MM/YYYY"
                         />
                       </div>
                     </div>
@@ -555,6 +556,7 @@ class Class extends Component {
                           selected={endDate}
                           onChange={this.endDateChange}
                           className="form-control"
+                          dateFormat="DD/MM/YYYY"
                         />
                       </div>
                     </div>

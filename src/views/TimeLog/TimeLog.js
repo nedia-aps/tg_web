@@ -5,8 +5,6 @@ import { withRouter } from "react-router-dom";
 import * as classAction from "../../redux/actions";
 import Loadmask from "react-redux-loadmask";
 
-const monthShortNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
 class TimeLog extends Component {
   handleClick(id) {
     this.props.classAction.formChanged({ prop: "userId", value: id });
@@ -26,8 +24,16 @@ class TimeLog extends Component {
   }
   dateFormate = (d) => {
     const formateDate = new Date(d);
-    const date = `${monthShortNames[formateDate.getMonth()]} ${formateDate.getDate()}, ${formateDate.getFullYear()}`;
-    return date;
+    let dd = formateDate.getDate();
+    let mm = formateDate.getMonth() + 1; //January is 0!
+    let yyyy = formateDate.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    } 
+    if (mm < 10) {
+      mm = '0' + mm;
+    } 
+    return `${dd}/${mm}/${yyyy}`;
   };
   renderSpeedo(value){
     if(value===0){

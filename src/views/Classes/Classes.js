@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import * as classAction from "../../redux/actions";
 import Loadmask from "react-redux-loadmask";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-const monthShortNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
 class Classess extends Component {
   handleEditClick(id) {
     const{history,classAction}=this.props;
@@ -42,8 +42,16 @@ class Classess extends Component {
   }
   dateFormate = (d) => {
     const formateDate = new Date(d);
-    const date = `${monthShortNames[formateDate.getMonth()]} ${formateDate.getDate()}, ${formateDate.getFullYear()}`;
-    return date;
+    let dd = formateDate.getDate();
+    let mm = formateDate.getMonth() + 1; //January is 0!
+    let yyyy = formateDate.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    } 
+    if (mm < 10) {
+      mm = '0' + mm;
+    } 
+    return `${dd}/${mm}/${yyyy}`;
   };
   render() {
     const {danger} = this.state;
