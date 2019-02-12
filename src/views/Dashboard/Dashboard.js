@@ -2,14 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
-import { Bar, Line } from "react-chartjs-2";
-import { Dropdown, DropdownMenu, DropdownItem, Progress } from "reactstrap";
 import * as classAction from "../../redux/actions/classAction";
-import axios from 'axios';
-import { config } from '../../utils';
-
-
-
 
 class Dashboard extends Component {
   constructor(props) {
@@ -23,7 +16,7 @@ class Dashboard extends Component {
 
   }
   componentWillMount() {
-    const { classAction, history } = this.props;
+    const { classAction } = this.props;
     classAction.dashBordData();
 
   }
@@ -34,28 +27,28 @@ class Dashboard extends Component {
   }
 
 renderSpeedo(value){
-  if(value==0){
-    return (<img src={require('../../images/0.png')}  style={{width: 590}}/>);
+  if(value === 0){
+    return (<img src={require('../../images/0.png')} alt="background" style={{width: 590}}/>);
   } else if(value>0 && value<10){
-    return (<img src={require('../../images/1.png')}  style={{width: 590}}/>);
+    return (<img src={require('../../images/1.png')} alt="background" style={{width: 590}}/>);
   } else if(value>=10 && value<=20){
-    return (<img src={require('../../images/2.png')}  style={{width: 590}}/>);
+    return (<img src={require('../../images/2.png')} alt="background" style={{width: 590}}/>);
   } else if(value>=20 && value<=30){
-    return (<img src={require('../../images/3.png')}  style={{width: 590}}/>);
+    return (<img src={require('../../images/3.png')} alt="background" style={{width: 590}}/>);
   }else if(value>=30 && value<=40){
-    return (<img src={require('../../images/4.png')}  style={{width: 590}}/>);
+    return (<img src={require('../../images/4.png')} alt="background" style={{width: 590}}/>);
   }else if(value>=40 && value<=50){
-    return (<img src={require('../../images/5.png')}  style={{width: 590}}/>);
+    return (<img src={require('../../images/5.png')} alt="background" style={{width: 590}}/>);
   }else if(value>=50 && value<=60){
-    return (<img src={require('../../images/6.png')}  style={{width: 590}}/>);
+    return (<img src={require('../../images/6.png')} alt="background" style={{width: 590}}/>);
   }else if(value>=60 && value<=70){
-    return (<img src={require('../../images/7.png')}  style={{width: 590}}/>);
+    return (<img src={require('../../images/7.png')} alt="background" style={{width: 590}}/>);
   }else if(value>=70 && value<=80){
-    return (<img src={require('../../images/8.png')}  style={{width: 590}}/>);
+    return (<img src={require('../../images/8.png')} alt="background" style={{width: 590}}/>);
   }else if(value>=80 && value<=90){
-    return (<img src={require('../../images/9.png')}  style={{width: 590}}/>);
+    return (<img src={require('../../images/9.png')} alt="background" style={{width: 590}}/>);
   }else if(value>=90 && value<100){
-    return (<img src={require('../../images/10.png')}  style={{width: 590}}/>);
+    return (<img src={require('../../images/10.png')} alt="background" style={{width: 590}}/>);
   }
 }
   render() {

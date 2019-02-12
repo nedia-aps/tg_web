@@ -18,11 +18,11 @@ import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
-var options = [
+let options = [
   { value: 'one', label: 'One' },
   { value: 'two', label: 'Two' }
 ];
-var getOptions = function(input, callback) {
+let getOptions = function(input, callback) {
   setTimeout(function() {
     callback(null, {
       options: [
@@ -74,8 +74,8 @@ class User extends Component {
   
 SaveUser(e){
   e.preventDefault()
-  var name=this.refs.name.value;
-  var email=this.refs.email.value;
+  let name=this.refs.name.value;
+  let email=this.refs.email.value;
   userAction.saveUser({name,email});
 }
  state = { value: 'Ma' }

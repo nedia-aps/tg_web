@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link, Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "../../components/Header/";
 import Sidebar from "../../components/Sidebar/";
 import Breadcrumb from "../../components/Breadcrumb/";
@@ -14,22 +14,13 @@ import Classes from "../../views/Classes/";
 import Teacher from "../../views/Teacher/";
 import Class from "../../views/Class/";
 // import Profile from "../../views/User/";
-import Login from "../../views/Pages/Login/";
 import TimeLog from "../../views/TimeLog/";
 import MissingLog from "../../views/MissingLog/";
 import ResetPassword from "../../views/ResetPassword/";
 import Admin from "../../views/Admin/";
 
 // import Loadmask from "react-redux-loadmask";
-function loggedIn() {
-  return true;
-}
 
-function requireAuth(nextState, replace) {
-  replace({
-    pathname: "asad"
-  });
-}
 class Full extends Component {
   constructor(props) {
     super(props);
@@ -38,13 +29,12 @@ class Full extends Component {
   }
 
   notAuthenticate(SuccessComponentName, FailComponent) {
-    const { isLoggedIn } = this.props;
     const state = localStorage.getItem("state");
     //return this.loggedUser !=null
     return state != null ? <SuccessComponentName /> : <Redirect to="/login" />;
   }
   render() {
-    const { isAuthenticated, created, classCreated } = this.props;
+    const { created, classCreated } = this.props;
     return (
       <div>
         <div className="app">

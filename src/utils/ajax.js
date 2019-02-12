@@ -61,7 +61,6 @@ static getdata(api) {
 
   static postContent(api, params, type) {
     try {
-      const me = this;
       axios.defaults.withCredentials = false;
       return axios
         .post(baseURL + api, params, { "Content-Type": type },{"dataType": "json"})

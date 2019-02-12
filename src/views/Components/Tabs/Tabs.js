@@ -32,7 +32,7 @@ class Tabs extends Component {
                   className={classnames({ active: this.state.activeTab === '1' })}
                   onClick={() => { this.toggle('1'); }}
                 >
-                  Home
+                  Statistik
                 </NavLink>
               </NavItem>
               <NavItem>

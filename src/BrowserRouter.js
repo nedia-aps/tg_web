@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 // import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 // import { createBrowserHistory } from 'history';
 import { connect } from "react-redux";
@@ -56,7 +56,7 @@ class BrowserRouter extends Component {
           <Route exact path="/500" name="Page 500" component={Page500} />
           <Route
             path="/"
-            name="Home"
+            name="Statistik"
             render={props =>
               isAuthenticated ? <Full {...props} /> : <Redirect to="/login" />
             }

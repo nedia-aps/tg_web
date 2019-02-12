@@ -1,10 +1,9 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
 import * as classAction from "../../redux/actions";
 import Loadmask from "react-redux-loadmask";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const monthShortNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -54,7 +53,7 @@ class MissingLog extends Component {
     return (
       <div>
       <Loadmask>
-        <img src={require('../../images/loading.gif')} width="100" height="100" />
+        <img src={require('../../images/loading.gif')} alt="indlæser" width="100" height="100" />
         </Loadmask>
       <div className="animated fadeIn">
         <div className="row">

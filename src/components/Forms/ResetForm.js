@@ -18,7 +18,7 @@ const InnerForm = props => {
     <div className="card">
               <div className="card-header">
 
-                <strong> {'Reset'} </strong> password
+                <strong> {'Nulstil'} </strong> kodeord
               </div>
               <div className="card-block">
 
@@ -27,7 +27,7 @@ const InnerForm = props => {
                       className="col-md-3 form-control-label"
                       htmlFor="text-input"
                     >
-                      Old Password
+                      Gammel Kodeord
                     </label>
                     <div className="col-md-9">
                       <input
@@ -37,7 +37,7 @@ const InnerForm = props => {
                         className={
                           "form-control " + (errors.OldPassword ? "is-invalid" : "")
                         }
-                        placeholder="Old Password"
+                        placeholder="Gammel Kodeord"
                         value={values.OldPassword}
                         onChange={e => {
                           setFieldValue('OldPassword', e.target.value);
@@ -56,7 +56,7 @@ const InnerForm = props => {
                       className="col-md-3 form-control-label"
                       htmlFor="password-input"
                     >
-                     New Password
+                     Nyt kodeord
                     </label>
                     <div className="col-md-9">
                       <input
@@ -67,7 +67,7 @@ const InnerForm = props => {
                         className={
                           "form-control " + (errors.NewPassword ? "is-invalid" : "")
                         }
-                        placeholder="New Password"
+                        placeholder="Nyt kodeord"
                         onChange={e => {
                           setFieldValue('NewPassword', e.target.value);
                         }}
@@ -84,7 +84,7 @@ const InnerForm = props => {
                       className="col-md-3 form-control-label"
                       htmlFor="phone-input"
                     >
-                      Confirm Password
+                      Bekræft Kodeord
                     </label>
                     <div className="col-md-9">
                     <input
@@ -95,7 +95,7 @@ const InnerForm = props => {
                     className={
                       "form-control " + (errors.ConfirmPassword ? "is-invalid" : "")
                     }
-                    placeholder="Confirm Password"
+                    placeholder="Bekræft Kodeord"
                     onChange={e => {
                       setFieldValue('ConfirmPassword', e.target.value);
                     }}
@@ -119,7 +119,7 @@ const InnerForm = props => {
                     Gem
                   </button>
                   <button type="reset" className="btn btn-sm btn-danger">
-                    <i className="fa fa-ban" /> Reset
+                    <i className="fa fa-ban" /> Nulstil
                   </button>
                 </div>
               </div>
@@ -150,14 +150,14 @@ const Enhancer = withFormik({
   validateOnBlur: false,
   validateOnChange: true,
   validationSchema: Yup.object().shape({
-    OldPassword: Yup.mixed().required('Old Password is required'),
+    OldPassword: Yup.mixed().required('Gammelt kodeord skal udfyldes'),
     ConfirmPassword:Yup.mixed().test('match', 'Passwords do not match', function (password) {
       return password === this.parent.NewPassword
-    }).required('Password confirm is required'),
+    }).required('Bekræft kodeord skal udfyldes'),
     NewPassword: Yup.string()
     .min(6, 'New password has to be longer than 5 characters!')
     .matches(PasswordRegex,"Invalid password")
-    .required('New password is required!')
+    .required('Nyt kodeord skal udfyldes!')
     }),
 
 

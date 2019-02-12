@@ -1,17 +1,12 @@
 import axios from "axios";
 import {
   ACCOUNT_CHANGED,
-  USER_LOADING_CHANGED,
-  GENERIC_ACTIONS,
   USER
 } from "../types";
 import { toastr } from "react-redux-toastr";
 import { config } from "../../utils";
-import { AjaxService } from "../../utils";
-import { createBrowserHistory } from "history";
 import { showLoadmask, hideLoadmask } from "react-redux-loadmask";
 const rp = require("request-promise");
-const history = createBrowserHistory();
 //const { ROOT_URL, REST_APIs } = config;
 const REST_API = config.REST_APIs;
 const baseURL = config.ROOT_URL;
@@ -27,7 +22,7 @@ export const formChanged = value => {
 export const login = loginModel => {
   return dispatch => {
     const loginUrl = baseURL + Account.LogIn;
-    var options = {
+    let options = {
       method: "POST",
       uri: loginUrl,
       form: {
@@ -52,12 +47,12 @@ export const login = loginModel => {
           });
         } else {
           dispatch(hideLoadmask());
-          toastr.error("Login Failed", "Invalid Username or Password");
+          toastr.error("Login fejl", "Fejl i bruger eller kode");
         }
       })
       .catch(function(err) {
         dispatch(hideLoadmask());
-        toastr.error("Login Failed", "Invalid Username or Password");
+        toastr.error("Login fejl", "Fejl i bruger eller kode");
       });
   };
 };
@@ -115,7 +110,7 @@ export const logoutUser = (history) => {
         }
       })
       .catch(error => {
-        toastr.error("Error", "Please try later.");
+        toastr.error("Error", "Prøv igen senere.");
       });
   };
 };
@@ -129,7 +124,7 @@ export const resetPassword = (model,history) => {
         const baseModel = response.data;
         if (baseModel.success) {
           dispatch(hideLoadmask());
-          toastr.success("Success", "Password Updated.");
+          toastr.success("Fuldført", "Password Updated.");
           dispatch({
             type: USER.LOGOUT_SUCCESS,
             payload: null
@@ -142,7 +137,7 @@ export const resetPassword = (model,history) => {
         }
       })
       .catch(error => {
-        toastr.error("Error", "Please try later.");
+        toastr.error("Error", "Prøv igen senere.");
         dispatch(showLoadmask());
       });
   };
@@ -157,7 +152,7 @@ export const createAdmin = (model,history) => {
         const baseModel = response.data;
         if (baseModel.success) {
           dispatch(hideLoadmask());
-          toastr.success("Success", "Admin Created.");
+          toastr.success("Fuldført", "Admin Created.");
           history.push("/undervisere")
         }
         else{
@@ -165,7 +160,7 @@ export const createAdmin = (model,history) => {
         }
       })
       .catch(error => {
-        toastr.error("Error", "Please try later.");
+        toastr.error("Error", "Prøv igen senere.");
         dispatch(showLoadmask());
       });
   };

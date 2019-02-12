@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { withRouter, history } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import * as accountAction from "../../../redux/actions";
 import Button from "react-bootstrap-button-loader";
-import { toastr, actions as toastrActions } from "react-redux-toastr";
 import Loadmask from "react-redux-loadmask";
 class Login extends Component {
   constructor(props) {
@@ -15,7 +14,7 @@ class Login extends Component {
     const { accountAction } = this.props;
     const { login } = accountAction;
     e.preventDefault();
-    var error = false;
+    let error = false;
     if (this.state.name === "" || this.state.name.trim() === "") {
       this.setState({ nameError: true });
       error = true;
@@ -25,7 +24,7 @@ class Login extends Component {
       error = true;
     }
     if (!error) {
-      var loginModel = {
+      let loginModel = {
         Email: this.state.name,
         Password: this.state.password
       };
@@ -45,7 +44,7 @@ class Login extends Component {
     return (
       <div>
         <Loadmask>
-        <img src={require('../../../images/loading.gif')} width="100" height="100" />
+        <img src={require('../../../images/loading.gif')} alt="indlæser" width="100" height="100" />
         </Loadmask>
         <div className="app flex-row align-items-center">
           <div className="container">
@@ -98,12 +97,12 @@ class Login extends Component {
                             className="btn btn-primary px-4"
                             onClick={this.loginUser.bind(this)}
                           >
-                          Log ind
+                            Log ind
                           </Button>
                               </div>
                         <div className="col-6 text-right">
                           <button type="button" className="btn btn-link px-0">
-                          Glemt kode
+                            Glemt kode
                           </button>
                         </div>
                       </div>

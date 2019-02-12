@@ -1,8 +1,7 @@
 import axios from "axios";
-import { USER_CHANGED,DELETE_TEACHER, TEACHERS } from "../types";
+import { USER_CHANGED, TEACHERS } from "../types";
 import { config } from "../../utils";
-import { AjaxService } from "../../utils";
-import { toastr, actions as toastrActions } from "react-redux-toastr";
+import { toastr } from "react-redux-toastr";
 import { showLoadmask, hideLoadmask } from "react-redux-loadmask";
 //const { ROOT_URL, REST_APIs } = config;
 
@@ -29,18 +28,18 @@ export const saveTeacher = ({ name, email,userName, phone,history }) => {
       .then(response => {
         const baseModel = response.data;
         if (baseModel.success) {
-          toastr.success("Success", "Teacher Created");
+          toastr.success("Fuldført", "Teacher Created");
           dispatch({
             type: TEACHERS.ADD_TEACHER
           });
           //history.push("teachers")
         }
         else{
-          toastr.error("Error", "Invalid Username or Password");
+          toastr.error("Fejl", "Fejl i bruger eller kode");
         }
       })
       .catch(error => {
-        toastr.error("Error", "There is some issue.");
+        toastr.error("Fejl", "There is some issue.");
       });
   };
 };
@@ -52,18 +51,18 @@ export const updateTeacher = ({ id,name, email,userName, phone,history }) => {
       .then(response => {
         const baseModel = response.data;
         if (baseModel.success) {
-          toastr.success("Success", "Teacher Updated");
+          toastr.success("Fuldført", "Teacher Updated");
           dispatch({
             type: TEACHERS.ADD_TEACHER
           });
           history.push("undervisere")
         }
         else{
-          toastr.error("Error", "Invalid Username or Password");
+          toastr.error("Fejl", "Fejl i bruger eller kode");
         }
       })
       .catch(error => {
-        toastr.error("Error", "There is some issue.");
+        toastr.error("Fejl", "There is some issue.");
       });
   };
 };

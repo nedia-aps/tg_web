@@ -3,6 +3,7 @@ import { withFormik } from 'formik';
 import PropTypes from 'prop-types';
 import Yup from 'yup';
 
+// eslint-disable-next-line
 const EmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const PasswordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 
@@ -175,7 +176,7 @@ const InnerForm = props => {
                     Gem
                   </button>
                   <button type="reset" className="btn btn-sm btn-danger" onClick={()=>resetForm()}>
-                    <i className="fa fa-ban" /> Reset
+                    <i className="fa fa-ban" /> Nulstil
                   </button>
                 </div>
               </div>

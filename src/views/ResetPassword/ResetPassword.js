@@ -11,11 +11,11 @@ class ResetPassword extends Component {
     this.handleSubmit= this.handleSubmit.bind(this);
 
   }
-handleSubmit=(values)=>{
-  const {accountAction,history}= this.props;
-  var model={OldPassword: values.OldPassword,NewPassword: values.NewPassword, ConfirmPassword: values.ConfirmPassword};
-  accountAction.resetPassword(model,history)
-}
+  handleSubmit=(values)=>{
+    const {accountAction,history}= this.props;
+    let model={OldPassword: values.OldPassword,NewPassword: values.NewPassword, ConfirmPassword: values.ConfirmPassword};
+    accountAction.resetPassword(model,history)
+  }
   render() {
     return (
       <div className="animated fadeIn">

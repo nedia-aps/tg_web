@@ -1,12 +1,10 @@
 import axios from 'axios';
 import { CONTENT_CHANGED } from '../types';
-import { config } from '../../utils';
-import { AjaxService } from '../../utils';
 //const { ROOT_URL, REST_APIs } = config;
 
 export const getCountries = ({input}) => {
     return (dispatch) => {
-         axios.get('http://dev.veincer.com/umbraco/surface/ContentSurface/Countries?q=${input}')
+      axios.get(`http://dev.veincer.com/umbraco/surface/ContentSurface/Countries?q=${input}`)
         .then(function (response) {
           dispatch({ type: CONTENT_CHANGED, payload: {
                       prop: "countriesList",
@@ -32,7 +30,7 @@ export const getCountries = ({input}) => {
 };
 export const getCities = ({input,countryId}) => {
     return (dispatch) => {
-         axios.get('http://dev.veincer.com/umbraco/surface/ContentSurface/Countries?q=${input}')
+         axios.get(`http://dev.veincer.com/umbraco/surface/ContentSurface/Countries?q=${input}`)
         .then(function (response) {
           dispatch({ type: CONTENT_CHANGED, payload: {
                       prop: "citiesList",

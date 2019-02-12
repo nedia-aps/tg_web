@@ -9,7 +9,7 @@ class TeacherList extends Component {
     super(props, context);
     this.handleClick = this.handleClick.bind(this);
     // an example array of items to be paged
-    var exampleItems = _.range(1, 151).map(i => {
+    let exampleItems = _.range(1, 151).map(i => {
       return { id: i, name: "Item " + i };
     });
 

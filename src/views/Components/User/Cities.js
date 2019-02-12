@@ -13,7 +13,7 @@ const Cities = createClass({
 	propTypes: {
 		label: PropTypes.string,
 	},
-	//var options:this.props.cities;
+	//let options:this.props.cities;
 	getInitialState () {
 		return {
 			backspaceRemoves: true,

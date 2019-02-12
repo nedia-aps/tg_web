@@ -1,9 +1,8 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
 import * as classAction from "../../redux/actions";
-import Gauge from 'react-radial-gauge';
 import Loadmask from "react-redux-loadmask";
 
 const monthShortNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -31,39 +30,39 @@ class TimeLog extends Component {
     return date;
   };
   renderSpeedo(value){
-    if(value==0){
-      return (<img src={require('../../images/0.png')}  style={{width: 590}}/>);
+    if(value===0){
+      return (<img src={require('../../images/0.png')} alt="background" style={{width: 590}}/>);
     } else if(value>0 && value<10){
-      return (<img src={require('../../images/1.png')}  style={{width: 590}}/>);
+      return (<img src={require('../../images/1.png')} alt="background" style={{width: 590}}/>);
     } else if(value>=10 && value<=20){
-      return (<img src={require('../../images/2.png')}  style={{width: 590}}/>);
+      return (<img src={require('../../images/2.png')} alt="background" style={{width: 590}}/>);
     } else if(value>=20 && value<=30){
-      return (<img src={require('../../images/3.png')}  style={{width: 590}}/>);
+      return (<img src={require('../../images/3.png')} alt="background" style={{width: 590}}/>);
     }else if(value>=30 && value<=40){
-      return (<img src={require('../../images/4.png')}  style={{width: 590}}/>);
+      return (<img src={require('../../images/4.png')} alt="background" style={{width: 590}}/>);
     }else if(value>=40 && value<=50){
-      return (<img src={require('../../images/5.png')}  style={{width: 590}}/>);
+      return (<img src={require('../../images/5.png')} alt="background" style={{width: 590}}/>);
     }else if(value>=50 && value<=60){
-      return (<img src={require('../../images/6.png')}  style={{width: 590}}/>);
+      return (<img src={require('../../images/6.png')} alt="background" style={{width: 590}}/>);
     }else if(value>=60 && value<=70){
-      return (<img src={require('../../images/7.png')}  style={{width: 590}}/>);
+      return (<img src={require('../../images/7.png')} alt="background" style={{width: 590}}/>);
     }else if(value>=70 && value<=80){
-      return (<img src={require('../../images/8.png')}  style={{width: 590}}/>);
+      return (<img src={require('../../images/8.png')} alt="background" style={{width: 590}}/>);
     }else if(value>=80 && value<=90){
-      return (<img src={require('../../images/9.png')}  style={{width: 590}}/>);
+      return (<img src={require('../../images/9.png')} alt="background" style={{width: 590}}/>);
     }else if(value>=90 && value<100){
-      return (<img src={require('../../images/10.png')}  style={{width: 590}}/>);
+      return (<img src={require('../../images/10.png')} alt="background" style={{width: 590}}/>);
     }
   }
   render() {
-    const { loading, timeLog } = this.props;
+    const { timeLog } = this.props;
     const loggedDetails=timeLog.loggedDetails;
     const logged=timeLog.logged;
     const totalHours=timeLog.totalHours;
     return (
       <div>
       <Loadmask>
-        <img src={require('../../images/loading.gif')} width="100" height="100" />
+        <img src={require('../../images/loading.gif')} alt="indlæser" width="100" height="100" />
         </Loadmask>
       <div className="animated fadeIn">
 

@@ -3,7 +3,7 @@ import { Dropdown, DropdownMenu, DropdownItem } from "reactstrap";
 import * as accountAction from "../../redux/actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { withRouter, history } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 class Header extends Component {
   constructor(props) {
@@ -124,7 +124,7 @@ class Header extends Component {
                   <i className="fa fa-lock" /> Logud
                 </DropdownItem>
                 <DropdownItem onClick={()=>this.props.history.push("resetpassword")}>
-                <i className="fa fa-lock" /> Reset Password
+                <i className="fa fa-lock" /> Nulstil kodeord
               </DropdownItem>
               </DropdownMenu>
             </Dropdown>

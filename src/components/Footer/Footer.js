@@ -4,7 +4,7 @@ class Footer extends Component {
     return (
       <footer className="app-footer">
         <a href="http://coreui.io">TG</a> &copy; {new Date().getFullYear()} 
-        <span className="float-right">Powered by TG</span>
+        {/*<span className="float-right">Powered by TG</span>*/}
       </footer>
     )
   }

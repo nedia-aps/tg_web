@@ -1,7 +1,6 @@
 import axios from "axios";
 import { USER_CHANGED, CLASSES, DASHBOARD } from "../types";
 import { config } from "../../utils";
-import { AjaxService } from "../../utils";
 import { toastr } from "react-redux-toastr";
 import { showLoadmask, hideLoadmask } from "react-redux-loadmask";
 const REST_API = config.REST_APIs;
@@ -60,11 +59,11 @@ export const saveClass = ({
           dispatch({
             type: CLASSES.ADD_CLASS
           });
-          toastr.success("Success", "Class Created Successfully.");
+          toastr.success("Fuldført", "Class Created Successfully.");
         }
       })
       .catch(error => {
-        toastr.error("Error", "Please try later.");
+        toastr.error("Fejl", "Prøv igen senere.");
         dispatch(hideLoadmask());
       });
   };
@@ -109,12 +108,12 @@ export const updateClass = ({
           dispatch({
             type: CLASSES.ADD_CLASS
           });
-          toastr.success("Success", baseModel.message);
+          toastr.success("Fuldført", baseModel.message);
         }
       })
       .catch(error => {
         dispatch(hideLoadmask());
-        toastr.error("Error", "Please try later.");
+        toastr.error("Fejl", "Prøv igen senere.");
       });
   };
 };
@@ -133,7 +132,7 @@ export const getTeachders = () => {
         }
       })
       .catch(error => {
-        toastr.error("Error", "Please try later.");
+        toastr.error("Fejl", "Prøv igen senere.");
       });
   };
 };
@@ -155,7 +154,7 @@ export const getClasses = () => {
       })
       .catch(error => {
         dispatch(hideLoadmask());
-        toastr.error("Error", "Please try later.");
+        toastr.error("Fejl", "Prøv igen senere.");
       });
   };
 };
@@ -177,7 +176,7 @@ export const getClassLog = classId => {
         dispatch(hideLoadmask());
       })
       .catch(error => {
-        toastr.error("Error", "Please try later.");
+        toastr.error("Fejl", "Prøv igen senere.");
         dispatch(hideLoadmask());
       });
   };
@@ -196,13 +195,13 @@ export const noClassLog = () => {
             payload: baseModel.data
           });
         } else {
-          toastr.error("Error", baseModel.message);
+          toastr.error("Fejl", baseModel.message);
         }
 
         dispatch(hideLoadmask());
       })
       .catch(error => {
-        toastr.error("Error", "Please try later.");
+        toastr.error("Fejl", "Prøv igen senere.");
         dispatch(hideLoadmask());
       });
   };
@@ -226,7 +225,7 @@ export const dashBordData = () => {
       })
       .catch(error => {
         dispatch(hideLoadmask());
-        toastr.error("Error", "Please try later.");
+        toastr.error("Fejl", "Prøv igen senere.");
       });
   };
 };
@@ -247,7 +246,7 @@ export const getClassById = classId => {
         dispatch(hideLoadmask());
       })
       .catch(error => {
-        toastr.error("Error", "Please try later.");
+        toastr.error("Fejl", "Prøv igen senere.");
         dispatch(hideLoadmask());
       });
   };
@@ -266,12 +265,12 @@ export const deleteClass = classId => {
             type: CLASSES.CLASS_DELETED_SUCCESS,
             payload: classId
           });
-          toastr.success("Confirmation", baseModel.message);
+          toastr.success("Bekræftigelse", baseModel.message);
         }
         dispatch(hideLoadmask());
       })
       .catch(error => {
-        toastr.error("Error", "Please try later.");
+        toastr.error("Fejl", "Prøv igen senere.");
         dispatch(hideLoadmask());
       });
   };
@@ -294,7 +293,7 @@ export const test12 = (data) => {
       })
       .catch(error => {
         //dispatch(hideLoadmask());
-        toastr.error("Error", "Please try later.");
+        toastr.error("Fejl", "Prøv igen senere.");
       });
   };
 };

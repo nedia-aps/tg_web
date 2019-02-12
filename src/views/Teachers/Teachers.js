@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
@@ -48,13 +48,13 @@ class Teachers extends Component {
     return (
       <div>
       <Loadmask>
-        <img src={require('../../images/loading.gif')} width="100" height="100" />
+        <img src={require('../../images/loading.gif')} alt="indlæser" width="100" height="100" />
         </Loadmask>
       <div className="animated fadeIn">
       <Modal isOpen={danger}  className={'modal-danger ' + this.props.className}>
                   <ModalHeader toggle={this.toggleDanger}>Slet</ModalHeader>
                   <ModalBody>
-                 Are you sure you want to delete this user?
+                    Er du sikker på du vil slette denne burger?
                   </ModalBody>
                   <ModalFooter>
                     <Button color="primary" onClick={this.deleteConfirm}>Slet</Button>{' '}

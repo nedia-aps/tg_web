@@ -202,7 +202,7 @@ class Teacher extends Component {
                   Save
                 </button>
                 <button type="reset" className="btn btn-sm btn-danger">
-                  <i className="fa fa-ban" /> Reset
+                  <i className="fa fa-ban" /> Nulstil
                 </button>
               </div>
             </div>

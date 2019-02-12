@@ -1,4 +1,4 @@
-import { USER_CHANGED,DELETE_TEACHER, TEACHERS } from "../types";
+import { USER_CHANGED, TEACHERS } from "../types";
 
 const INITIAL_STATE = {
   userObject: "",

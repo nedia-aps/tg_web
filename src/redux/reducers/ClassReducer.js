@@ -155,7 +155,6 @@ export default (state = INITIAL_STATE, action) => {
       };
       case CLASSES.CLASS_DELETED_SUCCESS:
       const id=action.payload;
-      var data=state.classesList;
       return {
         ...state,
         classesList: state.classesList.filter(x=>x.id!==id)

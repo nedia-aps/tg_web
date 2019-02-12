@@ -2,30 +2,17 @@ import React, { Component } from "react";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
 import moment from "moment";
-import { DatetimePicker } from "rc-datetime-picker";
 import "react-datepicker/dist/react-datepicker.css";
-import { TimePicker } from "rc-datetime-picker";
 import Loadmask from "react-redux-loadmask";
-import {
-  Button,
-  ButtonDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from "reactstrap";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
 import * as classAction from "../../redux/actions";
 import "react-select/dist/react-select.css";
-import { debuglog } from "util";
-const EmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-let formats = ["MMM d yyyy", "MMM d yy", "d"];
 
 class Class extends Component {
   constructor(props) {
     super(props);
-    const { classData } = this.props;
     this.state = {
       nameError: false,
       userName: "",
@@ -98,22 +85,21 @@ class Class extends Component {
           this.setState({ studentError: false });
         }
         break;
+      default:
+        break;
     }
   }
   createClass(e) {
     e.preventDefault();
     const {
       name,
-      days,
       time,
       day,
       endtime,
       startDate,
       endDate,
       type,
-      totalStudent,
       selectedValue,
-      oldSelectedValue,
       maleStudent,
       femaleStudent
     } = this.props;
@@ -134,11 +120,11 @@ class Class extends Component {
       this.setState({ timeError: true });
       error = true;
     }
-    if (maleStudent === 0 && femaleStudent == 0) {
+    if (maleStudent === 0 && femaleStudent === 0) {
       this.setState({ studentError: true });
       error = true;
     }
-    if (maleStudent === 0 && femaleStudent == 0) {
+    if (maleStudent === 0 && femaleStudent === 0) {
       this.setState({ studentError: true });
       error = true;
     }
@@ -156,9 +142,9 @@ class Class extends Component {
         DayOfClass: type === '2'? 1 : day,
         time: time,
         EndTimeOfClass: endtime,
-        MaleStudent: parseInt(maleStudent),
-        FeMaleStudent: parseInt(femaleStudent),
-        TotalStudent: parseInt(maleStudent) + parseInt(femaleStudent)
+        MaleStudent: parseInt(maleStudent, 10),
+        FeMaleStudent: parseInt(femaleStudent, 10),
+        TotalStudent: parseInt(maleStudent, 10) + parseInt(femaleStudent, 10)
       });
     } else {
       this.props.classAction.saveClass({
@@ -167,19 +153,18 @@ class Class extends Component {
         endDate: endDate._d, //"Tue, 25 Jan 2018 17:26:26 GMT"
         IsRepeatable: type === "1" ? true : false,
         Teachers: selectedValue.toString(),
-        DayOfClass: day,
         time: time,
         EndTimeOfClass: endtime,
         DayOfClass: type === '2'? 1 : day,
-        MaleStudent: parseInt(maleStudent),
-        FeMaleStudent: parseInt(femaleStudent),
-        TotalStudent: parseInt(maleStudent) + parseInt(femaleStudent)
+        MaleStudent: parseInt(maleStudent, 10),
+        FeMaleStudent: parseInt(femaleStudent, 10),
+        TotalStudent: parseInt(maleStudent, 10) + parseInt(femaleStudent, 10)
       });
     }
   }
   onNameChange() {
     const { name } = this.props;
-    if (name == "") {
+    if (name === "") {
       this.setState({ nameError: true });
     } else {
       this.setState({ nameError: false });
@@ -187,7 +172,7 @@ class Class extends Component {
   }
   onMaleStudentBlur() {
     const { maleStudent, femaleStudent } = this.props;
-    if (maleStudent == 0 && femaleStudent == 0) {
+    if (maleStudent === 0 && femaleStudent === 0) {
       this.setState({ studentError: true });
     } else {
       this.setState({ studentError: false });
@@ -195,7 +180,7 @@ class Class extends Component {
   }
   onFeMaleStudentBlur() {
     const { maleStudent, femaleStudent } = this.props;
-    if (maleStudent == 0 && femaleStudent == 0) {
+    if (maleStudent === 0 && femaleStudent === 0) {
       this.setState({ studentError: true });
     } else {
       this.setState({ studentError: false });
@@ -203,7 +188,7 @@ class Class extends Component {
   }
   onDaysChange() {
     const { days, type } = this.state;
-    if (type === "1" && days == "") {
+    if (type === "1" && days === "") {
       this.setState({ daysError: true });
     } else {
       this.setState({ daysError: false });
@@ -212,7 +197,7 @@ class Class extends Component {
   onTimeChange(value) {
     this.props.classAction.formChanged({ prop: "time", value });
     const { time, type } = this.props;
-    if (type === "1" && time == "") {
+    if (type === "1" && time === "") {
       this.setState({ timeError: true });
     } else {
       this.setState({ timeError: false });
@@ -282,23 +267,14 @@ class Class extends Component {
   }
   render() {
     const {
-      userName,
       nameError,
-      daysError,
-      timeError,
-      emailError,
-      userNameError,
-      selectedOption,
       teacherError,
       typeError,
       studentError
     } = this.state;
     const {
-      name,
       type,
-      days,
       day,
-      totalStudent,
       selectedValue,
       startDate,
       endDate,
@@ -307,12 +283,12 @@ class Class extends Component {
       maleStudent,
       femaleStudent
     } = this.props;
-    const value = selectedOption && selectedOption.value;
     return (
       <div>
         <Loadmask>
           <img
             src={require("../../images/loading.gif")}
+            alt="indlæser"
             width="100"
             height="100"
           />
@@ -690,7 +666,7 @@ class Class extends Component {
                     className="btn btn-sm btn-danger"
                     onClick={this.onResetClick()}
                   >
-                    <i className="fa fa-ban" /> Reset
+                    <i className="fa fa-ban" /> Nulstil
                   </button>
                 </div>
               </div>

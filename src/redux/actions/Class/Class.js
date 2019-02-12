@@ -289,7 +289,7 @@ class Class extends Component {
                       className="col-md-3 form-control-label"
                       htmlFor="phone-input"
                     >
-                      Teachers
+                      Instruktører
                     </label>
                     <div className="col-md-9">
                       <Select
@@ -335,7 +335,7 @@ class Class extends Component {
                   Save
                 </button>
                 <button type="reset" className="btn btn-sm btn-danger">
-                  <i className="fa fa-ban" /> Reset
+                  <i className="fa fa-ban" /> Nulstil
                 </button>
               </div>
             </div>

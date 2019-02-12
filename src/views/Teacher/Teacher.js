@@ -1,15 +1,9 @@
 import React, { Component } from "react";
-import {
-  Button,
-  ButtonDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from "reactstrap";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
 import * as teacherAction from "../../redux/actions";
+// eslint-disable-next-line
 const EmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 class Teacher extends Component {
   constructor(props) {
@@ -49,7 +43,8 @@ class Teacher extends Component {
 
           // error = true;
         }break;
-
+      default: 
+        break;
     }
   }
   createTeacher(e) {
@@ -91,7 +86,7 @@ class Teacher extends Component {
   }
   onNameChange() {
     const { name } = this.state;
-    if (name == "") {
+    if (name === "") {
       this.setState({ nameError: true });
     } else {
       this.setState({ nameError: false });
@@ -99,7 +94,7 @@ class Teacher extends Component {
   }
   onEmailChange() {
     const { email } = this.state;
-    if (email == "" || !email.match(EmailRegex)) {
+    if (email === "" || !email.match(EmailRegex)) {
       this.setState({ emailError: true });
     } else {
       this.setState({ emailError: false });
@@ -107,7 +102,7 @@ class Teacher extends Component {
   }
   onUserNameChange() {
     const { userName } = this.state;
-    if (userName == "") {
+    if (userName === "") {
       this.setState({ userNameError: true });
     } else {
       this.setState({ userNameError: false });
@@ -222,7 +217,7 @@ class Teacher extends Component {
                   Gem
                 </button>
                 <button type="reset" className="btn btn-sm btn-danger">
-                  <i className="fa fa-ban" /> Reset
+                  <i className="fa fa-ban" /> Nulstil
                 </button>
               </div>
             </div>

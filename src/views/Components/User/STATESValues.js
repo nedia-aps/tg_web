@@ -5,7 +5,7 @@ import Select from 'react-select';
 
 const STATESValues = require('./stateslist');
 
-var StatesField = createClass({
+let StatesField = createClass({
 	displayName: 'StatesField',
 	propTypes: {
 		label: PropTypes.string,
@@ -27,7 +27,7 @@ var StatesField = createClass({
 		};
 	},
 	switchCountry (e) {
-		var newCountry = e.target.value;
+		let newCountry = e.target.value;
 		console.log('Country changed to ' + newCountry);
 		this.setState({
 			country: newCountry,
@@ -49,7 +49,7 @@ var StatesField = createClass({
 		this.setState(newState);
 	},
 	render () {
-		var options = STATES[this.state.country];
+		let options = STATES[this.state.country];
 		return (
 			<div className="section">
 				<h3 className="section-heading">{this.props.label}</h3>
