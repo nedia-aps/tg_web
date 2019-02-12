@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { withRouter } from "react-router-dom";
-import * as classAction from "../../redux/actions/classAction";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
+import * as classActions from '../../redux/actions/classAction';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Dashboard extends Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       dropdownOpen: false,
-      dashboardData: null,
+      // dashboardData: null,
     };
   }
 
@@ -21,14 +21,17 @@ class Dashboard extends Component {
   }
 
   toggle() {
+    const { dropdownOpen } = this.state;
     this.setState({
-      dropdownOpen: !this.state.dropdownOpen
+      dropdownOpen: !dropdownOpen,
     });
   }
 
   renderSpeedo(value) {
     const id = value === 0 ? 0 : Math.floor(Math.min(90, value) / 10) + 1;
-    return (<img src={require(`../../images/${id}.png`)} alt="background" style={{ width: '100%' }} />);
+    // eslint-disable-next-line
+    const url = require(`../../images/${id}.png`);
+    return <img src={url} alt="background" style={{ width: '100%' }} />;
   }
 
   render() {
@@ -39,110 +42,164 @@ class Dashboard extends Component {
         <div className="row">
           <div className="col-sm-6 col-lg-6">
             <div className="card card-inverse">
-              <h2 style={{ color: 'black', textAlign: 'center', marginTop: '12px' }}>Nuværende uge</h2>
+              <h2
+                style={{
+                  color: 'black',
+                  textAlign: 'center',
+                  marginTop: '12px',
+                }}
+              >
+                Nuværende uge
+              </h2>
               <div className="chart-wrapper">
                 <div>
-                  { dashboardStat && dashboardStat.ugelog.procent !== 'NaN' ?
-                this.renderSpeedo(dashboardStat.ugelog.procent) : null
-            }
+                  {dashboardStat && dashboardStat.ugelog.procent !== 'NaN'
+                    ? this.renderSpeedo(dashboardStat.ugelog.procent)
+                    : null}
 
-                  {dashboardStat && dashboardStat.ugelog.totallog > 0 ? <p style={{ position: 'absolute', top: '48%', left: '48%', transform: 'translate(-50%, -50%)', color: 'white', fontSize: 32 }}>{dashboardStat && dashboardStat.ugelog.totallog}</p> : ''}
+                  {dashboardStat && dashboardStat.ugelog.totallog > 0 ? (
+                    <p
+                      style={{
+                        position: 'absolute',
+                        top: '48%',
+                        left: '48%',
+                        transform: 'translate(-50%, -50%)',
+                        color: 'white',
+                        fontSize: 32,
+                      }}
+                    >
+                      {dashboardStat && dashboardStat.ugelog.totallog}
+                    </p>
+                  ) : (
+                    ''
+                  )}
 
-                  {dashboardStat && dashboardStat.ugelog.totallog > 0 ? <p style={{ position: 'absolute', top: '54%', left: '54%', transform: 'translate(-50%, -50%)', color: 'white', fontSize: 32 }}>Timer</p> : null }
-
-
+                  {dashboardStat && dashboardStat.ugelog.totallog > 0 ? (
+                    <p
+                      style={{
+                        position: 'absolute',
+                        top: '54%',
+                        left: '54%',
+                        transform: 'translate(-50%, -50%)',
+                        color: 'white',
+                        fontSize: 32,
+                      }}
+                    >
+                      Timer
+                    </p>
+                  ) : null}
                 </div>
               </div>
             </div>
           </div>
           <div className="col-sm-6 col-lg-6">
             <div className="card card-inverse">
-              <h2 style={{ color: 'black', textAlign: 'center', marginTop: '12px' }}>Nuværende måned</h2>
+              <h2
+                style={{
+                  color: 'black',
+                  textAlign: 'center',
+                  marginTop: '12px',
+                }}
+              >
+                Nuværende måned
+              </h2>
               <div className="chart-wrapper" style={{ position: 'relative' }}>
                 <div>
                   {dashboardStat &&
-                    this.renderSpeedo(dashboardStat.maanedlog.procent)
-                }
-                  {dashboardStat && dashboardStat.maanedlog.maanedtotallog > 0 ?
-                    <p style={{
-                      position: 'absolute',
-                      top: 'calc(40% + 35px)',
-                      left: 0,
-                      right: 0,
-                      transform: 'translate(0, -100%)',
-                      color: 'white',
-                      fontSize: 32,
-                      textAlign: 'center',
-                    }}
+                    this.renderSpeedo(dashboardStat.maanedlog.procent)}
+                  {dashboardStat &&
+                  dashboardStat.maanedlog.maanedtotallog > 0 ? (
+                    <p
+                      style={{
+                        position: 'absolute',
+                        top: 'calc(40% + 35px)',
+                        left: 0,
+                        right: 0,
+                        transform: 'translate(0, -100%)',
+                        color: 'white',
+                        fontSize: 32,
+                        textAlign: 'center',
+                      }}
                     >
-                      {dashboardStat && dashboardStat.maanedlog.maanedtotallog.toFixed(2)}
-                    </p> : null}
-
-                  {dashboardStat && dashboardStat.maanedlog.maanedtotallog > 0 &&
-                    <p style={{
-                      position: 'absolute',
-                      top: '52%',
-                      left: 0,
-                      right: 0,
-                      transform: 'translate(0%, -50%)',
-                      color: 'white',
-                      fontSize: 32,
-                      textAlign: 'center',
-                    }}
-                    >
-                    Timer
+                      {dashboardStat &&
+                        dashboardStat.maanedlog.maanedtotallog.toFixed(2)}
                     </p>
-                }
+                  ) : null}
 
+                  {dashboardStat && dashboardStat.maanedlog.maanedtotallog > 0 && (
+                    <p
+                      style={{
+                        position: 'absolute',
+                        top: '52%',
+                        left: 0,
+                        right: 0,
+                        transform: 'translate(0%, -50%)',
+                        color: 'white',
+                        fontSize: 32,
+                        textAlign: 'center',
+                      }}
+                    >
+                      Timer
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
           </div>
           <div className="col-sm-6 col-lg-6">
             <div className="card card-inverse">
-              <h2 style={{ color: 'black', textAlign: 'center', marginTop: '12px', }}>Hele perioden</h2>
+              <h2
+                style={{
+                  color: 'black',
+                  textAlign: 'center',
+                  marginTop: '12px',
+                }}
+              >
+                Hele perioden
+              </h2>
               <div className="chart-wrapper" style={{ position: 'relative' }}>
                 <div>
-                  { dashboardStat && dashboardStat.alltime.procent !== 'NaN' &&
-                    this.renderSpeedo(dashboardStat.alltime.procent)
-                }
-                  { dashboardStat && dashboardStat.alltime.procent !== 'NaN' ?
-                    <p style={{
-                      position: 'absolute',
-                      top: 'calc(40% + 35px)',
-                      left: 0,
-                      right: 0,
-                      transform: 'translate(0, -100%)',
-                      color: 'white',
-                      fontSize: 32,
-                      textAlign: 'center',
-                    }}
+                  {dashboardStat &&
+                    dashboardStat.alltime.procent !== 'NaN' &&
+                    this.renderSpeedo(dashboardStat.alltime.procent)}
+                  {dashboardStat && dashboardStat.alltime.procent !== 'NaN' ? (
+                    <p
+                      style={{
+                        position: 'absolute',
+                        top: 'calc(40% + 35px)',
+                        left: 0,
+                        right: 0,
+                        transform: 'translate(0, -100%)',
+                        color: 'white',
+                        fontSize: 32,
+                        textAlign: 'center',
+                      }}
                     >
-                      {dashboardStat && dashboardStat.alltime.totallog.toFixed(2)}
-                    </p> : null
-                }
-                  { dashboardStat && dashboardStat.alltime.procent !== 'NaN' &&
-                    <p style={{
-                      position: 'absolute',
-                      top: '52%',
-                      left: 0,
-                      right: 0,
-                      transform: 'translate(0%, -50%)',
-                      color: 'white',
-                      fontSize: 32,
-                      textAlign: 'center',
-                    }}
-                    >
-                    Timer
+                      {dashboardStat &&
+                        dashboardStat.alltime.totallog.toFixed(2)}
                     </p>
-                }
+                  ) : null}
+                  {dashboardStat && dashboardStat.alltime.procent !== 'NaN' && (
+                    <p
+                      style={{
+                        position: 'absolute',
+                        top: '52%',
+                        left: 0,
+                        right: 0,
+                        transform: 'translate(0%, -50%)',
+                        color: 'white',
+                        fontSize: 32,
+                        textAlign: 'center',
+                      }}
+                    >
+                      Timer
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-
       </div>
     );
   }
@@ -151,13 +208,14 @@ class Dashboard extends Component {
 const mapStateToProps = ({ classReducer }) => {
   const { dashboardStat } = classReducer;
   return {
-    dashboardStat
+    dashboardStat,
   };
 };
 const mapDispatchToProps = dispatch => ({
-  classAction: bindActionCreators(classAction, dispatch)
+  classAction: bindActionCreators(classActions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  withRouter(Dashboard)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withRouter(Dashboard));
