@@ -8,7 +8,7 @@ class Tables extends Component {
           <div className="col-lg-6">
             <div className="card">
               <div className="card-header">
-                <i className="fa fa-align-justify"></i> Simple Table1
+                <i className="fa fa-align-justify" /> Simple Table1
               </div>
               <div className="card-block">
                 <table className="table">
@@ -80,7 +80,7 @@ class Tables extends Component {
           <div className="col-lg-6">
             <div className="card">
               <div className="card-header">
-                <i className="fa fa-align-justify"></i> Striped Table
+                <i className="fa fa-align-justify" /> Striped Table
               </div>
               <div className="card-block">
                 <table className="table table-striped">
@@ -155,7 +155,7 @@ class Tables extends Component {
           <div className="col-lg-6">
             <div className="card">
               <div className="card-header">
-                <i className="fa fa-align-justify"></i> Condensed Table
+                <i className="fa fa-align-justify" /> Condensed Table
               </div>
               <div className="card-block">
                 <table className="table table-sm">
@@ -227,7 +227,7 @@ class Tables extends Component {
           <div className="col-lg-6">
             <div className="card">
               <div className="card-header">
-                <i className="fa fa-align-justify"></i> Bordered Table
+                <i className="fa fa-align-justify" /> Bordered Table
               </div>
               <div className="card-block">
                 <table className="table table-bordered">
@@ -302,7 +302,7 @@ class Tables extends Component {
           <div className="col-lg-12">
             <div className="card">
               <div className="card-header">
-                <i className="fa fa-align-justify"></i> Combined All Table
+                <i className="fa fa-align-justify" /> Combined All Table
               </div>
               <div className="card-block">
                 <table className="table table-bordered table-striped table-sm">
@@ -375,7 +375,7 @@ class Tables extends Component {
         </div>
       </div>
 
-    )
+    );
   }
 }
 

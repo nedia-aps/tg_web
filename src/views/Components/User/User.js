@@ -2,28 +2,29 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
-import * as userAction from "../../../redux/actions";
 import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
-import { getStates, matchStateToTerm, sortStates, styles } from './utils'
-import Autocomplete from './index'
 import classnames from 'classnames';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
-import Countries from './Countries';
-import States from './States';
-import Cities from './Cities';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { EditorState, convertToRaw, ContentState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
-let options = [
+import Cities from './Cities';
+import States from './States';
+import Countries from './Countries';
+import Autocomplete from './index'
+import { getStates, matchStateToTerm, sortStates, styles } from './utils'
+import * as userAction from "../../../redux/actions";
+
+const options = [
   { value: 'one', label: 'One' },
   { value: 'two', label: 'Two' }
 ];
-let getOptions = function(input, callback) {
-  setTimeout(function() {
+const getOptions = function(input, callback) {
+  setTimeout(() => {
     callback(null, {
       options: [
         { value: 'one', label: 'One' },
@@ -37,11 +38,11 @@ let getOptions = function(input, callback) {
 };
 
 function logChange(val) {
-  console.log("Selected: " + JSON.stringify(val));
+  console.log(`Selected: ${  JSON.stringify(val)}`);
 }
 
 
-  onEditorStateChange: Function = (editorState) => {
+  Function = (editorState) => {
     this.setState({
       editorState,
     });
@@ -54,9 +55,10 @@ class User extends Component {
     }
     
   }
+
   constructor(props) {
     super(props);
-    //console.log(this.props.userId);
+    // console.log(this.props.userId);
     this.toggle = this.toggle.bind(this);
     this.state = {
       activeTab: '1',
@@ -74,14 +76,17 @@ class User extends Component {
   
 SaveUser(e){
   e.preventDefault()
-  let name=this.refs.name.value;
-  let email=this.refs.email.value;
+  const name=this.refs.name.value;
+  const email=this.refs.email.value;
   userAction.saveUser({name,email});
 }
+
  state = { value: 'Ma' }
+
  state = {
     editorState: EditorState.createEmpty(),
   }
+
   render() {
      const { editorState } = this.state;
     return (
@@ -95,7 +100,7 @@ SaveUser(e){
                   className={classnames({ active: this.state.activeTab === '1' })}
                   onClick={() => { this.toggle('1'); }}
                 >
-                  <i className="icon-calculator"></i> Calculator
+                  <i className="icon-calculator" /> Calculator
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -103,7 +108,7 @@ SaveUser(e){
                   className={classnames({ active: this.state.activeTab === '2' })}
                   onClick={() => { this.toggle('2'); }}
                 >
-                  <i className="icon-basket-loaded"></i> Shoping cart
+                  <i className="icon-basket-loaded" /> Shoping cart
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -111,7 +116,7 @@ SaveUser(e){
                   className={classnames({ active: this.state.activeTab === '3' })}
                   onClick={() => { this.toggle('3'); }}
                 >
-                  <i className="icon-pie-chart"></i> Charts
+                  <i className="icon-pie-chart" /> Charts
                 </NavLink>
               </NavItem>
             </Nav>
@@ -119,11 +124,11 @@ SaveUser(e){
               <TabPane tabId="1">
                 <div className="card">
               <div className="card-header">
-                <i className="fa fa-edit"></i>Form Elements
+                <i className="fa fa-edit" />Form Elements
                 <div className="card-actions">
-                  <a href="#" className="btn-setting"><i className="icon-settings"></i></a>
-                  <a href="#" className="btn-minimize"><i className="icon-arrow-up"></i></a>
-                  <a href="#" className="btn-close"><i className="icon-close"></i></a>
+                  <a href="#" className="btn-setting"><i className="icon-settings" /></a>
+                  <a href="#" className="btn-minimize"><i className="icon-arrow-up" /></a>
+                  <a href="#" className="btn-close"><i className="icon-close" /></a>
                 </div>
               </div>
               <div className="card-block">
@@ -240,11 +245,9 @@ const mapStateToProps = ({ userReducerTest}) => {
     
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
+const mapDispatchToProps = dispatch => ({
     userAction: bindActionCreators(userAction, dispatch)
-  };
-};
+  });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   withRouter(User)

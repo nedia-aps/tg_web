@@ -1,6 +1,6 @@
 export const config = {
-  //ROOT_URL: "http://api.tgiapp.dk.web125.curanetserver.dk/",
-  ROOT_URL: "http://localhost:22876/",//"http://dev.tg.com/", //"http://api.tgiapp.dk.web125.curanetserver.dk/", //"http://api.tg.com/",
+  // ROOT_URL: "http://api.tgiapp.dk.web125.curanetserver.dk/",
+  ROOT_URL: "http://localhost:22876/", // "http://dev.tg.com/", //"http://api.tgiapp.dk.web125.curanetserver.dk/", //"http://api.tg.com/",
   REST_APIs: {
     Account: {
       LogIn: "Token",
@@ -9,7 +9,7 @@ export const config = {
       ResetPassword: "api/Account/ChangePassword",
       Register: "api/Account/Register"
     },
-    Dashboard:{
+    Dashboard: {
       DashboardStats: "api/Classes/Log",
     },
     User: {

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
-import * as classAction from "../../redux/actions";
 import Loadmask from "react-redux-loadmask";
+import * as classAction from "../../redux/actions";
 
 class MissingLog extends Component {
   handleClick(id) {
@@ -11,15 +11,17 @@ class MissingLog extends Component {
     // console.log(this.props.userObject);
     window.location = "/#/components/user";
   }
+
   handleLogClick(id) {
     const{history}=this.props;
     this.props.classAction.formChanged({ prop: "classId", value: id });
     history.push("/timelog");
     // this.props.classAction.formChanged({ prop: "userId", value: id });
     // console.log(this.props.userObject);
-    //window.location = "/#/components/user";
+    // window.location = "/#/components/user";
     
   }
+
   constructor(props, context) {
     super(props, context);
     this.handleClick = this.handleClick.bind(this);
@@ -27,34 +29,39 @@ class MissingLog extends Component {
     this.deleteConfirm= this.deleteConfirm.bind(this);
 
   }
+
   componentWillMount() {
     this.props.classAction.noClassLog();
   }
+
   delete(id) {
     this.setState({
       danger: true,
-      id:id
+      id
     });
   }
+
   deleteConfirm() {
     this.setState({
       danger: false
     });
     this.props.classAction.deleteClass(this.state.id);
   }
+
   dateFormate = (d) => {
     const formateDate = new Date(d);
     let dd = formateDate.getDate();
-    let mm = formateDate.getMonth() + 1; //January is 0!
-    let yyyy = formateDate.getFullYear();
+    let mm = formateDate.getMonth() + 1; // January is 0!
+    const yyyy = formateDate.getFullYear();
     if (dd < 10) {
-      dd = '0' + dd;
+      dd = `0${  dd}`;
     } 
     if (mm < 10) {
-      mm = '0' + mm;
+      mm = `0${  mm}`;
     } 
     return `${dd}/${mm}/${yyyy}`;
   };
+
   render() {
     const {missingLog} = this.props;
     return (
@@ -107,11 +114,9 @@ const mapStateToProps = ({ classReducer }) => {
     missingLog
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
+const mapDispatchToProps = dispatch => ({
     classAction: bindActionCreators(classAction, dispatch)
-  };
-};
+  });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   withRouter(MissingLog)

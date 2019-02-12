@@ -1,21 +1,18 @@
 import axios from "axios";
-import { USER_CHANGED, CLASSES, DASHBOARD } from "../types";
-import { config } from "../../utils";
 import { toastr } from "react-redux-toastr";
 import { showLoadmask, hideLoadmask } from "react-redux-loadmask";
+import { USER_CHANGED, CLASSES, DASHBOARD } from "../types";
+import { config } from "../../utils";
+
 const REST_API = config.REST_APIs;
 const baseURL = config.ROOT_URL;
-export const formChanged = value => {
-  return {
-    type: USER_CHANGED,
-    payload: value
-  };
-};
-export const classFormReset = () => {
-  return {
-    type: CLASSES.CLASS_FORM_RESET
-  };
-};
+export const formChanged = value => ({
+  type: USER_CHANGED,
+  payload: value
+});
+export const classFormReset = () => ({
+  type: CLASSES.CLASS_FORM_RESET
+});
 export const saveUser = ({ name, email }) => {
   console.log(email);
 };
@@ -33,21 +30,20 @@ export const saveClass = ({
   TotalStudent,
   MaleStudent,
   FeMaleStudent
-}) => {
-  return dispatch => {
-    dispatch(showLoadmask());
-    const addClass = baseURL + REST_API.Class.AddClass;
-    axios
+}) => dispatch => {
+  dispatch(showLoadmask());
+  const addClass = baseURL + REST_API.Class.AddClass;
+  axios
       .post(addClass, {
         Name: name,
-        IsRepeatable: IsRepeatable,
-        Teachers: Teachers,
-        DayOfClass: DayOfClass,
+        IsRepeatable,
+        Teachers,
+        DayOfClass,
         StartDateTime: startDate,
         EndDateTime: endDate,
         TimeOfClass: time,
-        EndTimeOfClass: EndTimeOfClass,
-        TotalClasses: TotalClasses,
+        EndTimeOfClass,
+        TotalClasses,
         TotalStudent,
         MaleStudent,
         FeMaleStudent
@@ -66,7 +62,6 @@ export const saveClass = ({
         toastr.error("Fejl", "Prøv igen senere.");
         dispatch(hideLoadmask());
       });
-  };
 };
 export const updateClass = ({
   classId,
@@ -82,21 +77,20 @@ export const updateClass = ({
   TotalStudent,
   MaleStudent,
   FeMaleStudent
-}) => {
-  return dispatch => {
-    const addClass = baseURL + REST_API.Class.UpdateClass;
-    axios
+}) => dispatch => {
+  const addClass = baseURL + REST_API.Class.UpdateClass;
+  axios
       .post(addClass, {
         Id: classId,
         Name: name,
-        IsRepeatable: IsRepeatable,
-        Teachers: Teachers,
-        DayOfClass: DayOfClass,
+        IsRepeatable,
+        Teachers,
+        DayOfClass,
         StartDateTime: startDate,
         EndDateTime: endDate,
         TimeOfClass: time,
-        EndTimeOfClass: EndTimeOfClass,
-        TotalClasses: TotalClasses,
+        EndTimeOfClass,
+        TotalClasses,
         TotalStudent,
         MaleStudent,
         FeMaleStudent
@@ -115,12 +109,10 @@ export const updateClass = ({
         dispatch(hideLoadmask());
         toastr.error("Fejl", "Prøv igen senere.");
       });
-  };
 };
-export const getTeachders = () => {
-  return dispatch => {
-    const getTeachder = baseURL + REST_API.User.GetTeachers;
-    axios
+export const getTeachders = () => dispatch => {
+  const getTeachder = baseURL + REST_API.User.GetTeachers;
+  axios
       .get(getTeachder)
       .then(response => {
         const baseModel = response.data;
@@ -134,13 +126,11 @@ export const getTeachders = () => {
       .catch(error => {
         toastr.error("Fejl", "Prøv igen senere.");
       });
-  };
 };
-export const getClasses = () => {
-  return dispatch => {
-    dispatch(showLoadmask());
-    const getClasses = baseURL + REST_API.Class.GetClasses;
-    axios
+export const getClasses = () => dispatch => {
+  dispatch(showLoadmask());
+  const getClasses = baseURL + REST_API.Class.GetClasses;
+  axios
       .get(getClasses)
       .then(response => {
         const baseModel = response.data;
@@ -156,14 +146,12 @@ export const getClasses = () => {
         dispatch(hideLoadmask());
         toastr.error("Fejl", "Prøv igen senere.");
       });
-  };
 };
-export const getClassLog = classId => {
-  return dispatch => {
-    dispatch(showLoadmask());
-    const getClasses =
-      baseURL + REST_API.Class.GetClassLog + "?classId=" + classId;
-    axios
+export const getClassLog = classId => dispatch => {
+  dispatch(showLoadmask());
+  const getClasses =
+      `${baseURL + REST_API.Class.GetClassLog}?classId=${classId}`;
+  axios
       .get(getClasses)
       .then(response => {
         const baseModel = response.data;
@@ -179,13 +167,11 @@ export const getClassLog = classId => {
         toastr.error("Fejl", "Prøv igen senere.");
         dispatch(hideLoadmask());
       });
-  };
 };
-export const noClassLog = () => {
-  return dispatch => {
-    dispatch(showLoadmask());
-    const NoClasslog = baseURL + REST_API.Class.NoLog;
-    axios
+export const noClassLog = () => dispatch => {
+  dispatch(showLoadmask());
+  const NoClasslog = baseURL + REST_API.Class.NoLog;
+  axios
       .get(NoClasslog)
       .then(response => {
         const baseModel = response.data;
@@ -204,21 +190,19 @@ export const noClassLog = () => {
         toastr.error("Fejl", "Prøv igen senere.");
         dispatch(hideLoadmask());
       });
-  };
 };
 
-export const dashBordData = () => {
-  return dispatch => {
-    dispatch(showLoadmask());
-    const getClasses = baseURL + REST_API.Dashboard.DashboardStats;
-    axios
+export const dashBordData = () => dispatch => {
+  dispatch(showLoadmask());
+  const getClasses = baseURL + REST_API.Dashboard.DashboardStats;
+  axios
       .get(getClasses)
       .then(response => {
         const baseModel = response.data;
         if (baseModel.success) {
           dispatch({
             type: DASHBOARD.GET_DASHBOARD,
-            payload:baseModel.data,
+            payload: baseModel.data,
           });
         }
         dispatch(hideLoadmask());
@@ -227,13 +211,11 @@ export const dashBordData = () => {
         dispatch(hideLoadmask());
         toastr.error("Fejl", "Prøv igen senere.");
       });
-  };
 };
-export const getClassById = classId => {
-  return dispatch => {
-    dispatch(showLoadmask());
-    const getClasses = baseURL + REST_API.Class.GetClass + "?id=" + classId;
-    axios
+export const getClassById = classId => dispatch => {
+  dispatch(showLoadmask());
+  const getClasses = `${baseURL + REST_API.Class.GetClass}?id=${classId}`;
+  axios
       .get(getClasses)
       .then(response => {
         const baseModel = response.data;
@@ -249,14 +231,12 @@ export const getClassById = classId => {
         toastr.error("Fejl", "Prøv igen senere.");
         dispatch(hideLoadmask());
       });
-  };
 };
-export const deleteClass = classId => {
-  return dispatch => {
-    dispatch(showLoadmask());
-    const getClasses =
-      baseURL + REST_API.Class.DeleteClass + "?classId=" + classId;
-    axios
+export const deleteClass = classId => dispatch => {
+  dispatch(showLoadmask());
+  const getClasses =
+      `${baseURL + REST_API.Class.DeleteClass}?classId=${classId}`;
+  axios
       .delete(getClasses)
       .then(response => {
         const baseModel = response.data;
@@ -273,35 +253,31 @@ export const deleteClass = classId => {
         toastr.error("Fejl", "Prøv igen senere.");
         dispatch(hideLoadmask());
       });
-  };
 };
-export const test12 = (data) => {
-  return dispatch => {
-    dispatch(showLoadmask());
-    const getClasses = baseURL + REST_API.Dashboard.DashboardStats;
-    axios
+export const test12 = (data) => dispatch => {
+  dispatch(showLoadmask());
+  const getClasses = baseURL + REST_API.Dashboard.DashboardStats;
+  axios
       .get(getClasses)
       .then(response => {
         const baseModel = response.data;
         if (baseModel.success) {
           dispatch({
             type: DASHBOARD.GET_DASHBOARD,
-            payload:baseModel.data,
+            payload: baseModel.data,
           });
         }
-        //dispatch(hideLoadmask());
+        // dispatch(hideLoadmask());
       })
       .catch(error => {
-        //dispatch(hideLoadmask());
+        // dispatch(hideLoadmask());
         toastr.error("Fejl", "Prøv igen senere.");
       });
-  };
 };
 
 export const verifyUser = data => (dispatch) => {
-
-    dispatch({
-      type: DASHBOARD.GET_DASHBOARD,
-      payload: data,
-    });
+  dispatch({
+    type: DASHBOARD.GET_DASHBOARD,
+    payload: data,
+  });
 };

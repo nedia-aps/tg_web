@@ -2,7 +2,7 @@ import { DASHBOARD } from '../types';
 
 const INITIAL_STATE = {
   dashboardObject: 'test',
-  dashboardStat:Object
+  dashboardStat: Object
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -12,7 +12,7 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         [action.payload.prop]: action.payload.value
       };
-      case DASHBOARD.GET_DASHBOARD:
+    case DASHBOARD.GET_DASHBOARD:
       return {
         ...state,
         dashboardStat: action.payload

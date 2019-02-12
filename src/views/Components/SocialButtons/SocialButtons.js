@@ -5,7 +5,7 @@ import { Editor } from 'react-draft-wysiwyg';
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 
-  onEditorStateChange: Function = (editorState) => {
+  Function = (editorState) => {
     this.setState({
       editorState,
     });
@@ -14,6 +14,7 @@ class SocialButtons extends Component {
   state = {
     editorState: EditorState.createEmpty(),
   }
+
   render() {
      const { editorState } = this.state;
     return (

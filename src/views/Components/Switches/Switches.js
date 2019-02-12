@@ -13,39 +13,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-3d switch-primary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-3d switch-secondary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-3d switch-success">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-3d switch-warning">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-3d switch-info">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-3d switch-danger">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -58,39 +58,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-default switch-primary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-secondary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-success">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-warning">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-info">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-danger">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -103,39 +103,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-default switch-pill switch-primary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-secondary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-success">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-warning">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-info">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-danger">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -148,39 +148,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-default switch-primary-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-secondary-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-success-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-warning-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-info-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-danger-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -193,39 +193,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-default switch-pill switch-primary-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-secondary-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-success-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-warning-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-info-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-danger-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -238,39 +238,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-default switch-primary-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-secondary-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-success-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-warning-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-info-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-danger-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -283,39 +283,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-default switch-pill switch-primary-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-secondary-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-success-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-warning-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-info-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-default switch-pill switch-danger-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -328,39 +328,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-text switch-primary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-secondary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-success">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-warning">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-info">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-danger">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -373,39 +373,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-text switch-pill switch-primary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-secondary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-success">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-warning">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-info">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-danger">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -419,39 +419,39 @@ class Switches extends Component {
               <div className="card-block">
 
                 <label className="switch switch-text switch-primary-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-secondary-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-success-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-warning-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-info-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-danger-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -465,39 +465,39 @@ class Switches extends Component {
               <div className="card-block">
 
                 <label className="switch switch-text switch-pill switch-primary-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-secondary-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-success-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-warning-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-info-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-danger-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -510,39 +510,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-text switch-primary-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-secondary-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-success-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-warning-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-info-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-danger-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -555,39 +555,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-text switch-pill switch-primary-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-secondary-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-success-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-warning-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-info-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-text switch-pill switch-danger-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -600,39 +600,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-icon switch-primary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-secondary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-success">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-warning">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-info">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-danger">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -645,39 +645,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-icon switch-pill switch-primary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-secondary">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-success">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-warning">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-info">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-danger">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -690,39 +690,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-icon switch-primary-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-secondary-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-success-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-warning-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-info-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-danger-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -735,39 +735,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-icon switch-pill switch-primary-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-secondary-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-success-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-warning-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-info-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-danger-outline">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -780,39 +780,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-icon switch-primary-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-secondary-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-success-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-warning-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-info-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-danger-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -825,39 +825,39 @@ class Switches extends Component {
               </div>
               <div className="card-block">
                 <label className="switch switch-icon switch-pill switch-primary-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-secondary-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-success-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-warning-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-info-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
                 &nbsp;&nbsp;&nbsp;
                 <label className="switch switch-icon switch-pill switch-danger-outline-alt">
-                  <input type="checkbox" className="switch-input" defaultChecked/>
-                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
-                  <span className="switch-handle"></span>
+                  <input type="checkbox" className="switch-input" defaultChecked />
+                  <span className="switch-label" data-on="&#xf00c" data-off="&#xf00d" />
+                  <span className="switch-handle" />
                 </label>
               </div>
             </div>
@@ -884,9 +884,9 @@ class Switches extends Component {
                       </td>
                       <td>
                         <label className="switch switch-lg switch-3d switch-primary">
-                          <input type="checkbox" className="switch-input" defaultChecked/>
-                          <span className="switch-label"></span>
-                          <span className="switch-handle"></span>
+                          <input type="checkbox" className="switch-input" defaultChecked />
+                          <span className="switch-label" />
+                          <span className="switch-handle" />
                         </label>
                       </td>
                       <td>
@@ -899,9 +899,9 @@ class Switches extends Component {
                       </td>
                       <td>
                         <label className="switch switch-3d switch-primary">
-                          <input type="checkbox" className="switch-input" defaultChecked/>
-                          <span className="switch-label"></span>
-                          <span className="switch-handle"></span>
+                          <input type="checkbox" className="switch-input" defaultChecked />
+                          <span className="switch-label" />
+                          <span className="switch-handle" />
                         </label>
                       </td>
                       <td>
@@ -914,9 +914,9 @@ class Switches extends Component {
                       </td>
                       <td>
                         <label className="switch switch-sm switch-3d switch-primary">
-                          <input type="checkbox" className="switch-input" defaultChecked/>
-                          <span className="switch-label"></span>
-                          <span className="switch-handle"></span>
+                          <input type="checkbox" className="switch-input" defaultChecked />
+                          <span className="switch-label" />
+                          <span className="switch-handle" />
                         </label>
                       </td>
                       <td>
@@ -929,9 +929,9 @@ class Switches extends Component {
                       </td>
                       <td>
                         <label className="switch switch-xs switch-3d switch-primary">
-                          <input type="checkbox" className="switch-input" defaultChecked/>
-                          <span className="switch-label"></span>
-                          <span className="switch-handle"></span>
+                          <input type="checkbox" className="switch-input" defaultChecked />
+                          <span className="switch-label" />
+                          <span className="switch-handle" />
                         </label>
                       </td>
                       <td>
@@ -948,7 +948,7 @@ class Switches extends Component {
       </div>
 
 
-    )
+    );
   }
 }
 

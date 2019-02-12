@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
-import * as classAction from "../../redux/actions";
 import Loadmask from "react-redux-loadmask";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import * as classAction from "../../redux/actions";
 
 class Classess extends Component {
   handleEditClick(id) {
@@ -12,11 +12,13 @@ class Classess extends Component {
     classAction.formChanged({ prop: "classId", value: id });
     history.push("/class");
   }
+
   handleLogClick(id) {
     const{history}=this.props;
     this.props.classAction.formChanged({ prop: "classId", value: id });
     history.push("/timelog");
   }
+
   constructor(props, context) {
     super(props, context);
     this.handleEditClick = this.handleEditClick.bind(this);
@@ -24,35 +26,40 @@ class Classess extends Component {
     this.deleteConfirm= this.deleteConfirm.bind(this);
 
   }
+
   componentWillMount() {
     this.props.classAction.getClasses();
     this.setState({danger:false, id:''});
   }
+
   delete(id) {
     this.setState({
       danger: true,
-      id:id
+      id
     });
   }
+
   deleteConfirm() {
     this.setState({
       danger: false
     });
     this.props.classAction.deleteClass(this.state.id);
   }
+
   dateFormate = (d) => {
     const formateDate = new Date(d);
     let dd = formateDate.getDate();
-    let mm = formateDate.getMonth() + 1; //January is 0!
-    let yyyy = formateDate.getFullYear();
+    let mm = formateDate.getMonth() + 1; // January is 0!
+    const yyyy = formateDate.getFullYear();
     if (dd < 10) {
-      dd = '0' + dd;
+      dd = `0${  dd}`;
     } 
     if (mm < 10) {
-      mm = '0' + mm;
+      mm = `0${  mm}`;
     } 
     return `${dd}/${mm}/${yyyy}`;
   };
+
   render() {
     const {danger} = this.state;
     return (
@@ -61,7 +68,7 @@ class Classess extends Component {
         <img src={require('../../images/loading.gif')} alt="indlæser" width="100" height="100" />
         </Loadmask>
       <div className="animated fadeIn">
-        <Modal isOpen={danger}  className={'modal-danger ' + this.props.className}>
+        <Modal isOpen={danger}  className={`modal-danger ${  this.props.className}`}>
           <ModalHeader toggle={this.toggleDanger}>Slet</ModalHeader>
           <ModalBody>
             Er du sikker på at du vil slette dette hold?
@@ -184,11 +191,9 @@ const mapStateToProps = ({ classReducer }) => {
    classesList
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
+const mapDispatchToProps = dispatch => ({
     classAction: bindActionCreators(classAction, dispatch)
-  };
-};
+  });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   withRouter(Classess)

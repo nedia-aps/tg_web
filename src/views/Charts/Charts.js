@@ -52,14 +52,14 @@ const doughnut = {
   datasets: [{
     data: [300, 50, 100],
     backgroundColor: [
-    '#FF6384',
-    '#36A2EB',
-    '#FFCE56'
+      '#FF6384',
+      '#36A2EB',
+      '#FFCE56'
     ],
     hoverBackgroundColor: [
-    '#FF6384',
-    '#36A2EB',
-    '#FFCE56'
+      '#FF6384',
+      '#36A2EB',
+      '#FFCE56'
     ]
   }]
 };
@@ -99,14 +99,14 @@ const pie = {
   datasets: [{
     data: [300, 50, 100],
     backgroundColor: [
-    '#FF6384',
-    '#36A2EB',
-    '#FFCE56'
+      '#FF6384',
+      '#36A2EB',
+      '#FFCE56'
     ],
     hoverBackgroundColor: [
-    '#FF6384',
-    '#36A2EB',
-    '#FFCE56'
+      '#FF6384',
+      '#36A2EB',
+      '#FFCE56'
     ]
   }]
 };
@@ -152,7 +152,8 @@ class Charts extends Component {
             </div>
             <div className="card-block">
               <div className="chart-wrapper">
-                <Line data={line}
+                <Line
+                  data={line}
                   options={{
                     maintainAspectRatio: false
                   }}
@@ -169,11 +170,12 @@ class Charts extends Component {
             </div>
             <div className="card-block">
               <div className="chart-wrapper">
-              <Bar data={bar}
-                options={{
-                  maintainAspectRatio: false
-                }}
-              />
+                <Bar
+                  data={bar}
+                  options={{
+                    maintainAspectRatio: false
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -231,7 +233,7 @@ class Charts extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

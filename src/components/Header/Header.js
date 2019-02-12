@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Dropdown, DropdownMenu, DropdownItem } from "reactstrap";
-import * as accountAction from "../../redux/actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import * as accountAction from "../../redux/actions";
+
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -40,14 +41,16 @@ class Header extends Component {
     e.preventDefault();
     document.body.classList.toggle("aside-menu-hidden");
   }
+
   redirectToPage(url) {
     window.location = url;
   }
 
   onLogoutClick() {
-    const {history} = this.props;
+    const { history } = this.props;
     this.props.accountAction.logoutUser(history);
   }
+
   render() {
     return (
       <header className="app-header navbar">
@@ -71,7 +74,7 @@ class Header extends Component {
           </li>
           <li className="nav-item px-3">
             <NavLink
-              to={"/dashboard"}
+              to="/dashboard"
               className="nav-link"
             >
               Statistik
@@ -79,27 +82,27 @@ class Header extends Component {
           </li>
           <li className="nav-item px-3">
             <NavLink
-              to={"/undervisere"}
+              to="/undervisere"
               className="nav-link"
             >
               Instruktører
             </NavLink>
           </li>
           <li className="nav-item px-3">
-          <NavLink
-              to={"/classes"}
+            <NavLink
+              to="/classes"
               className="nav-link"
             >
             Hold
-           </NavLink>
+            </NavLink>
           </li>
           <li className="nav-item px-3">
-          <NavLink
-              to={"/admin"}
+            <NavLink
+              to="/admin"
               className="nav-link"
             >
             Opret admin
-           </NavLink>
+            </NavLink>
           </li>
         </ul>
         <ul className="nav navbar-nav ml-auto">
@@ -115,7 +118,7 @@ class Header extends Component {
                 aria-haspopup="true"
                 aria-expanded={this.state.dropdownOpen}
               >
-              <i className="icon-user icons font-1xl d-block mt-2"></i>
+                <i className="icon-user icons font-1xl d-block mt-2" />
                 <span className="d-md-down-none">admin</span>
               </button>
 
@@ -123,28 +126,24 @@ class Header extends Component {
                 <DropdownItem header className="text-center">
                   <strong>Konto</strong>
                 </DropdownItem>
-                 <DropdownItem onClick={this.onLogoutClick.bind(this)}>
+                <DropdownItem onClick={this.onLogoutClick.bind(this)}>
                   <i className="fa fa-lock" /> Logud
                 </DropdownItem>
-                <DropdownItem onClick={()=>this.props.history.push("resetpassword")}>
-                <i className="fa fa-lock" /> Nulstil kodeord
-              </DropdownItem>
+                <DropdownItem onClick={() => this.props.history.push("resetpassword")}>
+                  <i className="fa fa-lock" /> Nulstil kodeord
+                </DropdownItem>
               </DropdownMenu>
             </Dropdown>
           </li>
-          <li className="nav-item d-md-down-none">
-
-          </li>
+          <li className="nav-item d-md-down-none" />
         </ul>
       </header>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    accountAction: bindActionCreators(accountAction, dispatch)
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  accountAction: bindActionCreators(accountAction, dispatch)
+});
 
 export default connect(null, mapDispatchToProps)(withRouter(Header));

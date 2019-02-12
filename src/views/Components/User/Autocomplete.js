@@ -280,7 +280,7 @@ class Autocomplete extends React.Component {
     Enter(event) {
       if (!this.isOpen()) {
         // menu is closed so there is no selection to accept -> do nothing
-        return
+        
       }
       else if (this.state.highlightedIndex == null) {
         // input has focus but no menu item is selected + enter is hit -> close the menu, highlight whatever's in input
@@ -299,7 +299,7 @@ class Autocomplete extends React.Component {
           isOpen: false,
           highlightedIndex: null
         }, () => {
-          //this.refs.input.focus() // TODO: file issue
+          // this.refs.input.focus() // TODO: file issue
           this.refs.input.setSelectionRange(
             value.length,
             value.length

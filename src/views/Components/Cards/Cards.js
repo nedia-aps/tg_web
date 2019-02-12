@@ -26,7 +26,7 @@ class Cards extends Component {
           <div className="col-sm-6 col-md-4">
             <div className="card">
               <div className="card-header">
-                <i className="fa fa-check"></i>Card with icon
+                <i className="fa fa-check" />Card with icon
               </div>
               <div className="card-block">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
@@ -39,8 +39,8 @@ class Cards extends Component {
                 Card with switch
                 <label className="switch switch-sm switch-text switch-info float-right mb-0">
                   <input type="checkbox" className="switch-input" />
-                  <span className="switch-label" data-on="On" data-off="Off"></span>
-                  <span className="switch-handle"></span>
+                  <span className="switch-label" data-on="On" data-off="Off" />
+                  <span className="switch-handle" />
                 </label>
               </div>
               <div className="card-block">
@@ -324,7 +324,7 @@ class Cards extends Component {
         </div>
       </div>
 
-    )
+    );
   }
 }
 

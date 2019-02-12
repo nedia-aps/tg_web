@@ -24,12 +24,12 @@ class Buttons extends Component {
                 <strong>With Icons</strong>
               </div>
               <div className="card-block">
-                <button type="button" className="btn btn-primary"><i className="fa fa-star"></i>&nbsp; Primary</button>
-                <button type="button" className="btn btn-secondary"><i className="fa fa-lightbulb-o"></i>&nbsp; Secondary</button>
-                <button type="button" className="btn btn-success"><i className="fa fa-magic"></i>&nbsp; Success</button>
-                <button type="button" className="btn btn-warning"><i className="fa fa-map-marker"></i>&nbsp; Warning</button>
-                <button type="button" className="btn btn-danger"><i className="fa fa-rss"></i>&nbsp; Danger</button>
-                <button type="button" className="btn btn-link"><i className="fa fa-link"></i>&nbsp; Link</button>
+                <button type="button" className="btn btn-primary"><i className="fa fa-star" />&nbsp; Primary</button>
+                <button type="button" className="btn btn-secondary"><i className="fa fa-lightbulb-o" />&nbsp; Secondary</button>
+                <button type="button" className="btn btn-success"><i className="fa fa-magic" />&nbsp; Success</button>
+                <button type="button" className="btn btn-warning"><i className="fa fa-map-marker" />&nbsp; Warning</button>
+                <button type="button" className="btn btn-danger"><i className="fa fa-rss" />&nbsp; Danger</button>
+                <button type="button" className="btn btn-link"><i className="fa fa-link" />&nbsp; Link</button>
               </div>
             </div>
             <div className="card">
@@ -121,11 +121,11 @@ class Buttons extends Component {
                 <strong>With Icons</strong>
               </div>
               <div className="card-block">
-                <button type="button" className="btn btn-outline-primary"><i className="fa fa-star"></i>&nbsp; Primary</button>
-                <button type="button" className="btn btn-outline-secondary"><i className="fa fa-lightbulb-o"></i>&nbsp; Secondary</button>
-                <button type="button" className="btn btn-outline-success"><i className="fa fa-magic"></i>&nbsp; Success</button>
-                <button type="button" className="btn btn-outline-warning"><i className="fa fa-map-marker"></i>&nbsp; Warning</button>
-                <button type="button" className="btn btn-outline-danger"><i className="fa fa-rss"></i>&nbsp; Danger</button>
+                <button type="button" className="btn btn-outline-primary"><i className="fa fa-star" />&nbsp; Primary</button>
+                <button type="button" className="btn btn-outline-secondary"><i className="fa fa-lightbulb-o" />&nbsp; Secondary</button>
+                <button type="button" className="btn btn-outline-success"><i className="fa fa-magic" />&nbsp; Success</button>
+                <button type="button" className="btn btn-outline-warning"><i className="fa fa-map-marker" />&nbsp; Warning</button>
+                <button type="button" className="btn btn-outline-danger"><i className="fa fa-rss" />&nbsp; Danger</button>
               </div>
             </div>
             <div className="card">
@@ -196,7 +196,7 @@ class Buttons extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

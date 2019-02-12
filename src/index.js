@@ -4,13 +4,14 @@ import { HashRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
-import configureAxios from "./utils/axiosDefault";
 import ReduxThunk from "redux-thunk";
+import ReduxToastr from "react-redux-toastr";
+import configureAxios from "./utils/axiosDefault";
 import combineReducers from "./redux/reducers";
 import BrowserRouter from "./BrowserRouter";
-import ReduxToastr from "react-redux-toastr";
+
 const history = createBrowserHistory();
-//let store = createStore(todoApp)
+// let store = createStore(todoApp)
 
 configureAxios();
 const appStore = createStore(combineReducers, {}, applyMiddleware(ReduxThunk));

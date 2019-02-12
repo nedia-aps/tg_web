@@ -6,68 +6,66 @@ import fetch from 'isomorphic-fetch';
 
 
 const GithubUsers = createClass({
-	displayName: 'GithubUsers',
-	propTypes: {
-		label: PropTypes.string,
-	},
-	getInitialState () {
-		return {
-			backspaceRemoves: true,
-			multi: true
-		};
-	},
-	onChange (value) {
-		this.setState({
-			value: value,
-		});
-	},
-	switchToMulti () {
-		this.setState({
-			multi: true,
-			value: [this.state.value],
-		});
-	},
-	switchToSingle () {
-		this.setState({
-			multi: false,
-			value: this.state.value ? this.state.value[0] : null
-		});
-	},
-	getUsers (input) {
-		if (!input) {
-			return Promise.resolve({ options: [] });
-		}
+  displayName: 'GithubUsers',
+  propTypes: {
+    label: PropTypes.string,
+  },
+  getInitialState() {
+    return {
+      backspaceRemoves: true,
+      multi: true
+    };
+  },
+  onChange(value) {
+    this.setState({
+      value,
+    });
+  },
+  switchToMulti() {
+    this.setState({
+      multi: true,
+      value: [this.state.value],
+    });
+  },
+  switchToSingle() {
+    this.setState({
+      multi: false,
+      value: this.state.value ? this.state.value[0] : null
+    });
+  },
+  getUsers(input) {
+    if (!input) {
+      return Promise.resolve({ options: [] });
+    }
 
-		return fetch(`http://dev.veincer.com/umbraco/surface/ContentSurface/Countries?q=${input}`)
+    return fetch(`http://dev.veincer.com/umbraco/surface/ContentSurface/Countries?q=${input}`)
 		.then(
 			(response) => response.json())
-		   .then((json) => {
-			return { options: json.Data.countries };
-		});
-	},
-	gotoUser (value, event) {
-		window.open(value.html_url);
-	},
-	toggleBackspaceRemoves () {
-		this.setState({
-			backspaceRemoves: !this.state.backspaceRemoves
-		});
-	},
-	toggleCreatable () {
-		this.setState({
-			creatable: !this.state.creatable
-		});
-	},
-	render () {
-		const AsyncComponent = this.state.creatable
+		   .then((json) => ({ options: json.Data.countries }));
+  },
+  gotoUser(value, event) {
+    window.open(value.html_url);
+  },
+  toggleBackspaceRemoves() {
+    this.setState({
+      backspaceRemoves: !this.state.backspaceRemoves
+    });
+  },
+  toggleCreatable() {
+    this.setState({
+      creatable: !this.state.creatable
+    });
+  },
+  render() {
+    const AsyncComponent = this.state.creatable
 			? Select.AsyncCreatable
 			: Select.Async;
 
-		return (
-			<div className="section">
-				<h3 className="section-heading">{this.props.label}</h3>
-				<AsyncComponent multi={!this.state.multi} value={this.state.value} onChange={this.onChange} onValueClick={this.gotoUser} valueKey="Id" labelKey="Name" loadOptions={this.getUsers} backspaceRemoves={this.state.backspaceRemoves} />
-				{/* <div className="checkbox-list">
+    return (
+      <div className="section">
+        <h3 className="section-heading">{this.props.label}</h3>
+        <AsyncComponent multi={!this.state.multi} value={this.state.value} onChange={this.onChange} onValueClick={this.gotoUser} valueKey="Id" labelKey="Name" loadOptions={this.getUsers} backspaceRemoves={this.state.backspaceRemoves} />
+        {/* <div className="checkbox-list">
 					<label className="checkbox">
 						<input type="radio" className="checkbox-control" checked={this.state.multi} onChange={this.switchToMulti}/>
 						<span className="checkbox-label">Multiselect</span>
@@ -88,11 +86,10 @@ const GithubUsers = createClass({
 					</label>
 				</div>
 				<div className="hint">This example uses fetch.js for showing Async options with Promises</div> */}
-			</div>
-		);
-	}
+      </div>
+    );
+  }
 });
 
 export default GithubUsers;
-
 

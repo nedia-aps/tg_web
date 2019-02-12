@@ -1,5 +1,5 @@
-import { USER_CHANGED, CLASSES, DASHBOARD } from "../types";
 import moment from "moment";
+import { USER_CHANGED, CLASSES, DASHBOARD } from "../types";
 
 const INITIAL_STATE = {
   userObject: "",
@@ -97,7 +97,7 @@ export default (state = INITIAL_STATE, action) => {
         missingLog: action.payload
       };
     case DASHBOARD.GET_DASHBOARD:
-    const d = action.payload;
+      const d = action.payload;
       return {
         ...state,
         dashboardStat: d
@@ -105,7 +105,7 @@ export default (state = INITIAL_STATE, action) => {
     case CLASSES.CLASS_SELECT:
       const arr = action.payload.teacher;
       const data = [];
-      arr.forEach(function(element) {
+      arr.forEach((element) => {
         data.push(element.teacherId);
       });
       return {
@@ -153,11 +153,11 @@ export default (state = INITIAL_STATE, action) => {
         maleStudent: 0,
         femaleStudent: 0
       };
-      case CLASSES.CLASS_DELETED_SUCCESS:
-      const id=action.payload;
+    case CLASSES.CLASS_DELETED_SUCCESS:
+      const id = action.payload;
       return {
         ...state,
-        classesList: state.classesList.filter(x=>x.id!==id)
+        classesList: state.classesList.filter(x => x.id !== id)
       };
     default:
       return state;

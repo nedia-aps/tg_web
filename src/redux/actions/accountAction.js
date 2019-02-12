@@ -1,43 +1,41 @@
 import axios from "axios";
+import { toastr } from "react-redux-toastr";
+import { showLoadmask, hideLoadmask } from "react-redux-loadmask";
 import {
   ACCOUNT_CHANGED,
   USER
 } from "../types";
-import { toastr } from "react-redux-toastr";
 import { config } from "../../utils";
-import { showLoadmask, hideLoadmask } from "react-redux-loadmask";
+
 const rp = require("request-promise");
-//const { ROOT_URL, REST_APIs } = config;
+// const { ROOT_URL, REST_APIs } = config;
 const REST_API = config.REST_APIs;
 const baseURL = config.ROOT_URL;
 const Account = config.REST_APIs.Account;
 
-export const formChanged = value => {
-  return {
-    type: ACCOUNT_CHANGED,
-    payload: value
-  };
-};
+export const formChanged = value => ({
+  type: ACCOUNT_CHANGED,
+  payload: value
+});
 
-export const login = loginModel => {
-  return dispatch => {
-    const loginUrl = baseURL + Account.LogIn;
-    let options = {
-      method: "POST",
-      uri: loginUrl,
-      form: {
-        Username: loginModel.Email,
-        Password: loginModel.Password,
-        grant_type: "password"
-      },
-      headers: {
+export const login = loginModel => dispatch => {
+  const loginUrl = baseURL + Account.LogIn;
+  const options = {
+    method: "POST",
+    uri: loginUrl,
+    form: {
+      Username: loginModel.Email,
+      Password: loginModel.Password,
+      grant_type: "password"
+    },
+    headers: {
         /* 'content-type': 'application/x-www-form-urlencoded' */
         // Is set automatically
-      }
-    };
-    dispatch(showLoadmask());
-    rp(options)
-      .then(function(response) {
+    }
+  };
+  dispatch(showLoadmask());
+  rp(options)
+      .then((response) => {
         const jsonData = JSON.parse(response);
         if (jsonData) {
           localStorage.setItem("state", jsonData.access_token);
@@ -50,20 +48,18 @@ export const login = loginModel => {
           toastr.error("Login fejl", "Fejl i bruger eller kode");
         }
       })
-      .catch(function(err) {
+      .catch((err) => {
         dispatch(hideLoadmask());
         toastr.error("Login fejl", "Fejl i bruger eller kode");
       });
-  };
 };
 
-export const validateLoggedUser = () => {
-  return dispatch => {
-    let accessToken = localStorage.getItem("state");
-    if (accessToken != null) {
-      const validateUserURL = baseURL + REST_API.Account.ValidateLoggedUser;
-      dispatch(showLoadmask());
-      axios
+export const validateLoggedUser = () => dispatch => {
+  const accessToken = localStorage.getItem("state");
+  if (accessToken != null) {
+    const validateUserURL = baseURL + REST_API.Account.ValidateLoggedUser;
+    dispatch(showLoadmask());
+    axios
         .get(validateUserURL)
         .then(response => {
           dispatch(hideLoadmask());
@@ -86,9 +82,8 @@ export const validateLoggedUser = () => {
           // Log Exception
           dispatch(hideLoadmask());
         });
-    } else {
-    }
-  };
+  } else {
+  }
 };
 
 export const logoutUser = (history) => {
@@ -105,8 +100,7 @@ export const logoutUser = (history) => {
             payload: null
           });
           localStorage.removeItem("state");
-          history.push("login")
-
+          history.push("login");
         }
       })
       .catch(error => {
@@ -114,7 +108,7 @@ export const logoutUser = (history) => {
       });
   };
 };
-export const resetPassword = (model,history) => {
+export const resetPassword = (model, history) => {
   const resetPasswordURL = baseURL + REST_API.Account.ResetPassword;
   return dispatch => {
     dispatch(showLoadmask());
@@ -130,9 +124,8 @@ export const resetPassword = (model,history) => {
             payload: null
           });
           localStorage.removeItem("state");
-          history.push("login")
-        }
-        else{
+          history.push("login");
+        } else {
           toastr.error("Error", baseModel.message);
         }
       })
@@ -142,7 +135,7 @@ export const resetPassword = (model,history) => {
       });
   };
 };
-export const createAdmin = (model,history) => {
+export const createAdmin = (model, history) => {
   const register = baseURL + REST_API.Account.Register;
   return dispatch => {
     dispatch(showLoadmask());
@@ -153,9 +146,8 @@ export const createAdmin = (model,history) => {
         if (baseModel.success) {
           dispatch(hideLoadmask());
           toastr.success("Fuldført", "Admin Created.");
-          history.push("/undervisere")
-        }
-        else{
+          history.push("/undervisere");
+        } else {
           toastr.error("Error", baseModel.message);
         }
       })

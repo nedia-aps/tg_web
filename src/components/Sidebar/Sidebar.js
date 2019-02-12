@@ -24,7 +24,7 @@ class Sidebar extends Component {
           <ul className="nav">
             <li className="nav-item">
               <NavLink
-                to={"/dashboard"}
+                to="/dashboard"
                 className="nav-link"
                 activeClassName="active"
               >
@@ -34,7 +34,7 @@ class Sidebar extends Component {
 
             <li className="nav-item">
               <NavLink
-                to={"/undervisere"}
+                to="/undervisere"
                 className="nav-link"
                 activeClassName="active"
               >
@@ -43,7 +43,7 @@ class Sidebar extends Component {
             </li>
             <li className="nav-item">
               <NavLink
-                to={"/classes"}
+                to="/classes"
                 className="nav-link"
                 activeClassName="active"
               >
@@ -51,21 +51,21 @@ class Sidebar extends Component {
               </NavLink>
             </li>
             <li className="nav-item">
-            <NavLink
-              to={"/missinglog"}
-              className="nav-link"
-              activeClassName="active"
-            >
-              <i className="icon-speech" />  Mangler log
-            </NavLink>
-            <NavLink
-              to={"/admin"}
-              className="nav-link"
-              activeClassName="active"
-            >
-              <i className="icon-speech" /> Opret admin
-            </NavLink>
-          </li>
+              <NavLink
+                to="/missinglog"
+                className="nav-link"
+                activeClassName="active"
+              >
+                <i className="icon-speech" />  Mangler log
+              </NavLink>
+              <NavLink
+                to="/admin"
+                className="nav-link"
+                activeClassName="active"
+              >
+                <i className="icon-speech" /> Opret admin
+              </NavLink>
+            </li>
 
           </ul>
         </nav>

@@ -7,7 +7,7 @@ const INITIAL_STATE = {
   teachersList: [],
   selectedCountry: { Id: 1125, Name: "USA" },
   created: false,
-  teacher:'',
+  teacher: '',
   isDelete: false,
 };
 
@@ -23,10 +23,10 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         teachersList: action.payload,
         created: false,
-        teacher:'',
+        teacher: '',
         isDelete: false
       };
-      case TEACHERS.SET_TEACHER:
+    case TEACHERS.SET_TEACHER:
       return {
         ...state,
         teacher: action.payload,
@@ -36,7 +36,7 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         created: true
       };
-      case TEACHERS.DELETE_TEACHER:
+    case TEACHERS.DELETE_TEACHER:
       return {
         ...state,
         isDelete: action.payload

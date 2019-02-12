@@ -29,7 +29,7 @@ export default (state = INITIAL_STATE, action) => {
       };
     }
     case USER.LOGIN_SUCCESS: {
-      let loginSuccess = action.payload ? true : false;
+      const loginSuccess = !!action.payload;
       return {
         ...state,
         isAuthenticated: loginSuccess,

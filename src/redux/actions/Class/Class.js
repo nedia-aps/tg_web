@@ -17,8 +17,9 @@ import { withRouter } from "react-router-dom";
 import * as classAction from "../../redux/actions";
 import "react-select/dist/react-select.css";
 import { debuglog } from "util";
+
 const EmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-let formats = ["MMM d yyyy", "MMM d yy", "d"];
+const formats = ["MMM d yyyy", "MMM d yy", "d"];
 const options =
 [
   {
@@ -55,8 +56,9 @@ class Class extends Component {
     this.endDateChange = this.endDateChange.bind(this);
     this.cbChange = this.cbChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    //this.onClassCategoryChange = this.endDateChange.bind(this);
+    // this.onClassCategoryChange = this.endDateChange.bind(this);
   }
+
   onValueChange(propertyName, event) {
     this.setState({ [propertyName]: event.target.value });
     const value = event.target.value;
@@ -78,15 +80,17 @@ class Class extends Component {
         }
     }
   }
+
   createClass(e) {
     e.preventDefault();
     const { name } = this.state;
     this.props.classAction.saveClass({
-      name: name,
-      startDate: this.state.startDate._d, //"Tue, 24 Jan 2018 17:26:26 GMT",
-      endDate: this.state.endDate._d //"Tue, 25 Jan 2018 17:26:26 GMT"
+      name,
+      startDate: this.state.startDate._d, // "Tue, 24 Jan 2018 17:26:26 GMT",
+      endDate: this.state.endDate._d // "Tue, 25 Jan 2018 17:26:26 GMT"
     });
   }
+
   onNameChange() {
     const { name } = this.state;
     if (name == "") {
@@ -97,38 +101,44 @@ class Class extends Component {
   }
 
   onCategoryChange(value) {
-    //alert(event.target.value);
+    // alert(event.target.value);
     this.setState({ type: value });
   }
+
   onClassCategoryChange(value) {
     this.setState({ type: value });
   }
+
   createDateChange(date) {
     this.setState({
       startDate: date
     });
   }
+
   endDateChange(date) {
     this.setState({
       endDate: date
     });
   }
+
   handleChange = selectedOption => {
     
     const arr=[];
-    selectedOption.forEach(function(element) {
+    selectedOption.forEach((element) => {
       arr.push(element.value);
   });
-     //selectedOption.map(u => ()=> {
+     // selectedOption.map(u => ()=> {
      // arr.push(selectedOption[0].value)
-    //})
+    // })
     this.setState({ selectedOption ,selectedValue:arr});
     
-    //console.log(`Selected: ${selectedOption.label}`);
+    // console.log(`Selected: ${selectedOption.label}`);
   };
+
   cbChange(event){
     alert(event.target.value);
   }
+
   // handleChange(value) {
   //   this.setState({ value });
   // }
@@ -137,6 +147,7 @@ class Class extends Component {
       moment
     });
   }
+
   render() {
     const {
       name,
@@ -179,7 +190,7 @@ class Class extends Component {
                         id="text-input"
                         name="text-input"
                         className={
-                          "form-control " + (nameError ? "is-invalid" : "")
+                          `form-control ${  nameError ? "is-invalid" : ""}`
                         }
                         placeholder="Navn"
                         value={name}
@@ -294,7 +305,7 @@ class Class extends Component {
                     <div className="col-md-9">
                       <Select
                         name="form-field-name"
-                        multi={true}
+                        multi
                         value={selectedValue}
                         removeSelected={false}
                         onChange={this.handleChange}
@@ -353,10 +364,8 @@ const mapStateToProps = ({ classReducer,teacherReducer }) => {
     teachersList
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
+const mapDispatchToProps = dispatch => ({
     classAction: bindActionCreators(classAction, dispatch)
-  };
-};
+  });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Class));

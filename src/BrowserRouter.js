@@ -8,11 +8,11 @@ import { bindActionCreators } from "redux";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import * as accountAction from "./redux/actions";
-import Login from "./views/Pages/Login/";
-import Register from "./views/Pages/Register/";
-import Page404 from "./views/Pages/Page404/";
-import Page500 from "./views/Pages/Page500/";
-import Full from "./containers/Full/";
+import Login from "./views/Pages/Login";
+import Register from "./views/Pages/Register";
+import Page404 from "./views/Pages/Page404";
+import Page500 from "./views/Pages/Page500";
+import Full from "./containers/Full";
 // const history = createBrowserHistory();
 class BrowserRouter extends Component {
   constructor(props) {
@@ -66,7 +66,7 @@ class BrowserRouter extends Component {
             name="Classes"
             render={console.log('ok')
             }
-        />
+          />
         </div>
       </Router>
     );
@@ -80,10 +80,8 @@ const mapStateToProps = ({ accountReducerObject }) => {
     isAuthenticated
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    accountAction: bindActionCreators(accountAction, dispatch)
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  accountAction: bindActionCreators(accountAction, dispatch)
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(BrowserRouter);

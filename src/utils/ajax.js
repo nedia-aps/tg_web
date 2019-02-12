@@ -1,5 +1,6 @@
-﻿import axios from "axios";
+import axios from "axios";
 import { config } from "./config";
+
 const baseURL = config.ROOT_URL;
 
 export class AjaxService {
@@ -9,16 +10,18 @@ export class AjaxService {
     //   "application/x-www-form-urlencoded";
     axios.defaults.timeout = 1000;
   }
+
   static getParse(data) {
     return JSON.parse(data);
   }
-static getdata(api) {
+
+  static getdata(api) {
     try {
       const me = this;
       // return axios.get('https://rallycoding.herokuapp.com/api/music_albums', {
-        return axios.get(api, {
+      return axios.get(api, {
         transformResponse: [
-          function(data) {
+          function (data) {
             return me.getParse(data);
           }
         ]
@@ -27,13 +30,14 @@ static getdata(api) {
       return ex;
     }
   }
+
   static get(api, params) {
     try {
       const me = this;
       axios.defaults.withCredentials = true;
       return axios.get(baseURL + api, params, {
         transformResponse: [
-          function(data) {
+          function (data) {
             return me.getParse(data);
           }
         ]
@@ -46,10 +50,10 @@ static getdata(api) {
   static post(api, params) {
     try {
       const me = this;
-      //axios.defaults.withCredentials = true;
+      // axios.defaults.withCredentials = true;
       return axios.post(baseURL + api, params, {
         transformResponse: [
-          function(data) {
+          function (data) {
             return me.getParse(data);
           }
         ]
@@ -63,21 +67,20 @@ static getdata(api) {
     try {
       axios.defaults.withCredentials = false;
       return axios
-        .post(baseURL + api, params, { "Content-Type": type },{"dataType": "json"})
-        .catch(ex => {
-          return ex;
-        });
+        .post(baseURL + api, params, { "Content-Type": type }, { dataType: "json" })
+        .catch(ex => ex);
     } catch (ex) {
       return ex;
     }
   }
+
   static put(api, params) {
     try {
       const me = this;
       axios.defaults.withCredentials = true;
       return axios.put(baseURL + api, params, {
         transformResponse: [
-          function(data) {
+          function (data) {
             return me.getParse(data);
           }
         ]
@@ -86,13 +89,14 @@ static getdata(api) {
       return ex;
     }
   }
+
   static delete(api, params) {
     try {
       const me = this;
       axios.defaults.withCredentials = true;
       return axios.delete(baseURL + api, params, {
         transformResponse: [
-          function(data) {
+          function (data) {
             return me.getParse(data);
           }
         ]

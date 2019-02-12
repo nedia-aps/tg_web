@@ -1,13 +1,13 @@
 import { CONTENT_CHANGED } from '../types';
 
 const INITIAL_STATE = {
-  countriesList:[],
-  citiesList:[],
-  countryId:'',
-  stateId:'',
-  cityId:'',
-  selectedCountryId:'',
-  selectedCountryName:'',
+  countriesList: [],
+  citiesList: [],
+  countryId: '',
+  stateId: '',
+  cityId: '',
+  selectedCountryId: '',
+  selectedCountryName: '',
 };
 
 export default (state = INITIAL_STATE, action) => {

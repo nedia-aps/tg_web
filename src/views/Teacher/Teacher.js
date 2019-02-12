@@ -8,17 +8,18 @@ const EmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
 class Teacher extends Component {
   constructor(props) {
     super(props);
-    const{teacher} = this.props;
+    const { teacher } = this.props;
     this.state = {
-      name: teacher?teacher.name:'',
+      name: teacher ? teacher.name : '',
       nameError: false,
-      userName: teacher?teacher.email:'',
+      userName: teacher ? teacher.email : '',
       userNameError: false,
-      email:teacher?teacher.email:'',
+      email: teacher ? teacher.email : '',
       emailError: false,
-      phone:teacher && teacher.phone?teacher.phone:''
+      phone: teacher && teacher.phone ? teacher.phone : ''
     };
   }
+
   onValueChange(propertyName, event) {
     this.setState({ [propertyName]: event.target.value });
     const value = event.target.value;
@@ -30,7 +31,7 @@ class Teacher extends Component {
 
           // error = true;
         }
-         break;
+        break;
       case "userName":
         if (value === "" || value.trim() === "") {
           this.setState({ userNameError: true });
@@ -42,15 +43,16 @@ class Teacher extends Component {
           this.setState({ emailError: true });
 
           // error = true;
-        }break;
-      default: 
+        } break;
+      default:
         break;
     }
   }
+
   createTeacher(e) {
     e.preventDefault();
-    const{name,email,phone}=this.state;
-    const{history,teacher}=this.props;
+    const { name, email, phone } = this.state;
+    const { history, teacher } = this.props;
     let error = false;
     if (name === "" || name.trim() === "") {
       this.setState({ nameError: true });
@@ -64,26 +66,26 @@ class Teacher extends Component {
     if (error) {
       return false;
     }
-    if(teacher){
-    this.props.teacherAction.updateTeacher({
-          id:teacher.id,
-          name: name,
-          email: email,
-          userName:email,
-          phone:phone,
-          history
-        });
-    } else{
-       this.props.teacherAction.saveTeacher({
-      name: name,
-      email: email,
-      userName:email,
-      phone:phone,
-      history
-    });
+    if (teacher) {
+      this.props.teacherAction.updateTeacher({
+        id: teacher.id,
+        name,
+        email,
+        userName: email,
+        phone,
+        history
+      });
+    } else {
+      this.props.teacherAction.saveTeacher({
+        name,
+        email,
+        userName: email,
+        phone,
+        history
+      });
     }
-
   }
+
   onNameChange() {
     const { name } = this.state;
     if (name === "") {
@@ -92,6 +94,7 @@ class Teacher extends Component {
       this.setState({ nameError: false });
     }
   }
+
   onEmailChange() {
     const { email } = this.state;
     if (email === "" || !email.match(EmailRegex)) {
@@ -100,6 +103,7 @@ class Teacher extends Component {
       this.setState({ emailError: false });
     }
   }
+
   onUserNameChange() {
     const { userName } = this.state;
     if (userName === "") {
@@ -108,8 +112,9 @@ class Teacher extends Component {
       this.setState({ userNameError: false });
     }
   }
+
   render() {
-    const{teacher} = this.props;
+    const { teacher } = this.props;
     const {
       name,
       email,
@@ -124,7 +129,7 @@ class Teacher extends Component {
             <div className="card">
               <div className="card-header">
 
-                <strong> {teacher?'Rediger':'Opret'} </strong> bruger
+                <strong> {teacher ? 'Rediger' : 'Opret'} </strong> bruger
               </div>
               <div className="card-block">
                 <form
@@ -146,7 +151,7 @@ class Teacher extends Component {
                         id="text-input"
                         name="text-input"
                         className={
-                          "form-control " + (nameError ? "is-invalid" : "")
+                          `form-control ${nameError ? "is-invalid" : ""}`
                         }
                         placeholder="Navn"
                         value={name}
@@ -174,12 +179,12 @@ class Teacher extends Component {
                         name="email-input"
                         value={email}
                         className={
-                          "form-control " + (emailError ? "is-invalid" : "")
+                          `form-control ${emailError ? "is-invalid" : ""}`
                         }
                         placeholder="E-mail"
                         onChange={this.onValueChange.bind(this, "email")}
                         onBlur={() => this.onEmailChange()}
-                        disabled={this.props.teacher.email ? true : false}
+                        disabled={!!this.props.teacher.email}
                       />
                       {emailError
                         ? <span className="is-invalid">Du skal udfylde en gyldig e-mail </span>
@@ -228,14 +233,12 @@ class Teacher extends Component {
   }
 }
 const mapStateToProps = ({ teacherReducer }) => {
-  const {teacher} = teacherReducer;
-  return {teacher};
+  const { teacher } = teacherReducer;
+  return { teacher };
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    teacherAction: bindActionCreators(teacherAction, dispatch)
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  teacherAction: bindActionCreators(teacherAction, dispatch)
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   withRouter(Teacher)

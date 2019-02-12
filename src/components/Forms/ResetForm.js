@@ -16,113 +16,108 @@ const InnerForm = props => {
   } = props;
   return (
     <div className="card">
-              <div className="card-header">
+      <div className="card-header">
 
-                <strong> {'Nulstil'} </strong> kodeord
-              </div>
-              <div className="card-block">
+        <strong> {'Nulstil'} </strong> kodeord
+      </div>
+      <div className="card-block">
 
-                  <div className="form-group row">
-                    <label
-                      className="col-md-3 form-control-label"
-                      htmlFor="text-input"
-                    >
+        <div className="form-group row">
+          <label
+            className="col-md-3 form-control-label"
+            htmlFor="text-input"
+          >
                       Gammel Kodeord
-                    </label>
-                    <div className="col-md-9">
-                      <input
-                        type="password"
-                        id="text-input"
-                        name="text-input"
-                        className={
-                          "form-control " + (errors.OldPassword ? "is-invalid" : "")
+          </label>
+          <div className="col-md-9">
+            <input
+              type="password"
+              id="text-input"
+              name="text-input"
+              className={
+                          `form-control ${errors.OldPassword ? "is-invalid" : ""}`
                         }
-                        placeholder="Gammel Kodeord"
-                        value={values.OldPassword}
-                        onChange={e => {
-                          setFieldValue('OldPassword', e.target.value);
-                        }}
-
-                      />
-                      {errors.OldPassword
+              placeholder="Gammel Kodeord"
+              value={values.OldPassword}
+              onChange={e => {
+                setFieldValue('OldPassword', e.target.value);
+              }}
+            />
+            {errors.OldPassword
                         ? <span className="is-invalid">{errors.OldPassword}</span>
                         : ""}
-                    </div>
-                  </div>
+          </div>
+        </div>
 
 
-                  <div className="form-group row">
-                    <label
-                      className="col-md-3 form-control-label"
-                      htmlFor="password-input"
-                    >
+        <div className="form-group row">
+          <label
+            className="col-md-3 form-control-label"
+            htmlFor="password-input"
+          >
                      Nyt kodeord
-                    </label>
-                    <div className="col-md-9">
-                      <input
-                        type="password"
-                        id="email-input"
-                        name="email-input"
-                        value={values.NewPassword}
-                        className={
-                          "form-control " + (errors.NewPassword ? "is-invalid" : "")
+          </label>
+          <div className="col-md-9">
+            <input
+              type="password"
+              id="email-input"
+              name="email-input"
+              value={values.NewPassword}
+              className={
+                          `form-control ${errors.NewPassword ? "is-invalid" : ""}`
                         }
-                        placeholder="Nyt kodeord"
-                        onChange={e => {
-                          setFieldValue('NewPassword', e.target.value);
-                        }}
-
-
-                      />
-                      {errors.NewPassword
+              placeholder="Nyt kodeord"
+              onChange={e => {
+                setFieldValue('NewPassword', e.target.value);
+              }}
+            />
+            {errors.NewPassword
                         ? <span className="is-invalid">{errors.NewPassword} </span>
                         : ""}
-                    </div>
-                  </div>
-                  <div className="form-group row">
-                    <label
-                      className="col-md-3 form-control-label"
-                      htmlFor="phone-input"
-                    >
+          </div>
+        </div>
+        <div className="form-group row">
+          <label
+            className="col-md-3 form-control-label"
+            htmlFor="phone-input"
+          >
                       Bekræft Kodeord
-                    </label>
-                    <div className="col-md-9">
-                    <input
-                    type="password"
-                    id="confirm-input"
-                    name="confirm-input"
-                    value={values.ConfirmPassword}
-                    className={
-                      "form-control " + (errors.ConfirmPassword ? "is-invalid" : "")
+          </label>
+          <div className="col-md-9">
+            <input
+              type="password"
+              id="confirm-input"
+              name="confirm-input"
+              value={values.ConfirmPassword}
+              className={
+                      `form-control ${errors.ConfirmPassword ? "is-invalid" : ""}`
                     }
-                    placeholder="Bekræft Kodeord"
-                    onChange={e => {
-                      setFieldValue('ConfirmPassword', e.target.value);
-                    }}
-
-
-                  />
-                      {errors.ConfirmPassword
+              placeholder="Bekræft Kodeord"
+              onChange={e => {
+                setFieldValue('ConfirmPassword', e.target.value);
+              }}
+            />
+            {errors.ConfirmPassword
                         ? <span className="is-invalid">{errors.ConfirmPassword} </span>
                         : ""}
-                    </div>
-                  </div>
+          </div>
+        </div>
 
-                </div>
-                <div className="card-footer text-right">
-                  <button
-                    type="submit"
-                    className="btn btn-sm btn-primary"
-                    onClick={handleSubmit}
-                  >
-                    <i className="fa fa-dot-circle-o" />
+      </div>
+      <div className="card-footer text-right">
+        <button
+          type="submit"
+          className="btn btn-sm btn-primary"
+          onClick={handleSubmit}
+        >
+          <i className="fa fa-dot-circle-o" />
                     Gem
-                  </button>
-                  <button type="reset" className="btn btn-sm btn-danger">
-                    <i className="fa fa-ban" /> Nulstil
-                  </button>
-                </div>
-              </div>
+        </button>
+        <button type="reset" className="btn btn-sm btn-danger">
+          <i className="fa fa-ban" /> Nulstil
+        </button>
+      </div>
+    </div>
   );
 };
 
@@ -139,26 +134,23 @@ InnerForm.propTypes = {
 
 const Enhancer = withFormik({
   // set initial values
-  mapPropsToValues: props => {
-
-    return {
-      OldPassword:'',
-      NewPassword:'',
-      ConfirmPassword:'',
-    };
-  },
+  mapPropsToValues: props => ({
+    OldPassword: '',
+    NewPassword: '',
+    ConfirmPassword: '',
+  }),
   validateOnBlur: false,
   validateOnChange: true,
   validationSchema: Yup.object().shape({
     OldPassword: Yup.mixed().required('Gammelt kodeord skal udfyldes'),
-    ConfirmPassword:Yup.mixed().test('match', 'Passwords do not match', function (password) {
-      return password === this.parent.NewPassword
+    ConfirmPassword: Yup.mixed().test('match', 'Passwords do not match', function (password) {
+      return password === this.parent.NewPassword;
     }).required('Bekræft kodeord skal udfyldes'),
     NewPassword: Yup.string()
     .min(6, 'New password has to be longer than 5 characters!')
-    .matches(PasswordRegex,"Invalid password")
+    .matches(PasswordRegex, "Invalid password")
     .required('Nyt kodeord skal udfyldes!')
-    }),
+  }),
 
 
   handleSubmit: (values, bag) => {

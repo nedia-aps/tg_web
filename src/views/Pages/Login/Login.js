@@ -2,14 +2,16 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
-import * as accountAction from "../../../redux/actions";
 import Button from "react-bootstrap-button-loader";
 import Loadmask from "react-redux-loadmask";
+import * as accountAction from "../../../redux/actions";
+
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = { name: "hannerysg@me.com", password: "Fosv@431", nameError: false, pwError: false };
   }
+
   loginUser(e) {
     const { accountAction } = this.props;
     const { login } = accountAction;
@@ -24,19 +26,21 @@ class Login extends Component {
       error = true;
     }
     if (!error) {
-      let loginModel = {
+      const loginModel = {
         Email: this.state.name,
         Password: this.state.password
       };
       login(loginModel);
     }
   }
+
   onValueChange(propertyName, event) {
     this.setState({ [propertyName]: event.target.value });
   }
+
   render() {
     const { isLogin, isAuthenticated } = this.props;
-    const { name,password, nameError, pwError } = this.state;
+    const { name, password, nameError, pwError } = this.state;
     const { loading } = this.props;
     if (isLogin && !isAuthenticated) {
       this.props.accountAction.validateLoggedUser();
@@ -44,7 +48,7 @@ class Login extends Component {
     return (
       <div>
         <Loadmask>
-        <img src={require('../../../images/loading.gif')} alt="indlæser" width="100" height="100" />
+          <img src={require('../../../images/loading.gif')} alt="indlæser" width="100" height="100" />
         </Loadmask>
         <div className="app flex-row align-items-center">
           <div className="container">
@@ -60,7 +64,7 @@ class Login extends Component {
                       </p>
                       <div
                         className={
-                          "input-group mb-3 " + (nameError ? "has-danger" : "")
+                          `input-group mb-3 ${nameError ? "has-danger" : ""}`
                         }
                       >
                         <span className="input-group-addon">
@@ -76,7 +80,7 @@ class Login extends Component {
                       </div>
                       <div
                         className={
-                          "input-group mb-3 " + (pwError ? "has-danger" : "")
+                          `input-group mb-3 ${pwError ? "has-danger" : ""}`
                         }
                       >
                         <span className="input-group-addon">
@@ -99,7 +103,7 @@ class Login extends Component {
                           >
                             Log ind
                           </Button>
-                              </div>
+                        </div>
                         <div className="col-6 text-right">
                           <button type="button" className="btn btn-link px-0">
                             Glemt kode
@@ -127,10 +131,8 @@ const mapStateToProps = ({ accountReducerObject }) => {
     isAuthenticated
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    accountAction: bindActionCreators(accountAction, dispatch)
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  accountAction: bindActionCreators(accountAction, dispatch)
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login));

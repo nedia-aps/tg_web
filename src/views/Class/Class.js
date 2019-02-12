@@ -35,8 +35,9 @@ class Class extends Component {
     this.cbChange = this.cbChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.onResetClick = this.onResetClick.bind(this);
-    //this.onClassCategoryChange = this.endDateChange.bind(this);
+    // this.onClassCategoryChange = this.endDateChange.bind(this);
   }
+
   componentWillMount() {
     if (this.props.classId) {
       this.props.classAction.getClassById(this.props.classId);
@@ -45,9 +46,11 @@ class Class extends Component {
       this.props.classAction.getTeachders();
     }
   }
+
   componentDidMount() {
     console.log(this.props.classData);
   }
+
   onValueChange(propertyName, event) {
     this.setState({ [propertyName]: event.target.value });
     const value = event.target.value;
@@ -89,6 +92,7 @@ class Class extends Component {
         break;
     }
   }
+
   createClass(e) {
     e.preventDefault();
     const {
@@ -134,13 +138,13 @@ class Class extends Component {
     if (this.props.classId) {
       this.props.classAction.updateClass({
         classId: this.props.classId,
-        name: name,
-        startDate: startDate._d, //"Tue, 24 Jan 2018 17:26:26 GMT",
-        endDate: endDate._d, //"Tue, 25 Jan 2018 17:26:26 GMT"
-        IsRepeatable: type === "1" ? true : false,
+        name,
+        startDate: startDate._d, // "Tue, 24 Jan 2018 17:26:26 GMT",
+        endDate: endDate._d, // "Tue, 25 Jan 2018 17:26:26 GMT"
+        IsRepeatable: type === "1",
         Teachers: selectedValue.toString(),
         DayOfClass: type === '2'? 1 : day,
-        time: time,
+        time,
         EndTimeOfClass: endtime,
         MaleStudent: parseInt(maleStudent, 10),
         FeMaleStudent: parseInt(femaleStudent, 10),
@@ -148,12 +152,12 @@ class Class extends Component {
       });
     } else {
       this.props.classAction.saveClass({
-        name: name,
-        startDate: startDate._d, //"Tue, 24 Jan 2018 17:26:26 GMT",
-        endDate: endDate._d, //"Tue, 25 Jan 2018 17:26:26 GMT"
-        IsRepeatable: type === "1" ? true : false,
+        name,
+        startDate: startDate._d, // "Tue, 24 Jan 2018 17:26:26 GMT",
+        endDate: endDate._d, // "Tue, 25 Jan 2018 17:26:26 GMT"
+        IsRepeatable: type === "1",
         Teachers: selectedValue.toString(),
-        time: time,
+        time,
         EndTimeOfClass: endtime,
         DayOfClass: type === '2'? 1 : day,
         MaleStudent: parseInt(maleStudent, 10),
@@ -162,6 +166,7 @@ class Class extends Component {
       });
     }
   }
+
   onNameChange() {
     const { name } = this.props;
     if (name === "") {
@@ -170,6 +175,7 @@ class Class extends Component {
       this.setState({ nameError: false });
     }
   }
+
   onMaleStudentBlur() {
     const { maleStudent, femaleStudent } = this.props;
     if (maleStudent === 0 && femaleStudent === 0) {
@@ -178,6 +184,7 @@ class Class extends Component {
       this.setState({ studentError: false });
     }
   }
+
   onFeMaleStudentBlur() {
     const { maleStudent, femaleStudent } = this.props;
     if (maleStudent === 0 && femaleStudent === 0) {
@@ -186,6 +193,7 @@ class Class extends Component {
       this.setState({ studentError: false });
     }
   }
+
   onDaysChange() {
     const { days, type } = this.state;
     if (type === "1" && days === "") {
@@ -194,6 +202,7 @@ class Class extends Component {
       this.setState({ daysError: false });
     }
   }
+
   onTimeChange(value) {
     this.props.classAction.formChanged({ prop: "time", value });
     const { time, type } = this.props;
@@ -203,6 +212,7 @@ class Class extends Component {
       this.setState({ timeError: false });
     }
   }
+
   onEndTimeChange(value) {
     this.props.classAction.formChanged({ prop: "endtime", value });
   }
@@ -210,6 +220,7 @@ class Class extends Component {
   onCategoryChange(value) {
     this.setState({ type: value });
   }
+
   onClassCategoryChange(value) {
     this.props.classAction.formChanged({ prop: "type", value });
     if (value === "") {
@@ -218,19 +229,23 @@ class Class extends Component {
       this.setState({ typeError: false });
     }
   }
+
   onDayChange(value) {
-    //this.setState({ day: value });
-    this.props.classAction.formChanged({ prop: "day", value: value });
+    // this.setState({ day: value });
+    this.props.classAction.formChanged({ prop: "day", value });
   }
+
   createDateChange(date) {
     this.props.classAction.formChanged({ prop: "startDate", value: date });
   }
+
   endDateChange(date) {
     this.props.classAction.formChanged({ prop: "endDate", value: date });
   }
+
   handleChange = selectedOption => {
     const arr = [];
-    selectedOption.forEach(function(element) {
+    selectedOption.forEach((element) => {
       arr.push(element.value);
     });
     this.props.classAction.formChanged({ prop: "selectedValue", value: arr });
@@ -240,11 +255,13 @@ class Class extends Component {
     } else {
       this.setState({ teacherError: false });
     }
-    //console.log(`Selected: ${selectedOption.label}`);
+    // console.log(`Selected: ${selectedOption.label}`);
   };
+
   cbChange(event) {
     alert(event.target.value);
   }
+
   // handleChange(value) {
   //   this.setState({ value });
   // }
@@ -253,6 +270,7 @@ class Class extends Component {
       moment
     });
   };
+
   getTeachers() {
     const arr = [];
     if (this.props.classTeachersList) {
@@ -262,9 +280,11 @@ class Class extends Component {
     }
     return arr;
   }
+
   onResetClick() {
-    //this.props.classAction.classFormReset();
+    // this.props.classAction.classFormReset();
   }
+
   render() {
     const {
       nameError,
@@ -320,7 +340,7 @@ class Class extends Component {
                           id="text-input"
                           name="text-input"
                           className={
-                            "form-control " + (nameError ? "is-invalid" : "")
+                            `form-control ${  nameError ? "is-invalid" : ""}`
                           }
                           placeholder="Navn"
                           value={this.props.name}
@@ -346,7 +366,7 @@ class Class extends Component {
                           name="selectSm"
                           id="SelectLm"
                           className={
-                            "form-control " + (typeError ? "is-invalid" : "")
+                            `form-control ${  typeError ? "is-invalid" : ""}`
                           }
                           value={type}
                           onChange={evt =>
@@ -378,7 +398,7 @@ class Class extends Component {
                           <select
                             name="selectSm"
                             id="SelectLm"
-                            className={"form-control"}
+                            className="form-control"
                             value={day}
                             onChange={evt => this.onDayChange(evt.target.value)}
 
@@ -404,7 +424,7 @@ class Class extends Component {
                         <select
                           name="selectSm"
                           id="SelectLm"
-                          className={"form-control"}
+                          className="form-control"
                           value={time}
                           onChange={evt => this.onTimeChange(evt.target.value)}
                         >
@@ -470,7 +490,7 @@ class Class extends Component {
                         <select
                           name="selectSm"
                           id="SelectLm"
-                          className={"form-control"}
+                          className="form-control"
                           value={endtime}
                           onChange={evt =>
                             this.onEndTimeChange(evt.target.value)
@@ -570,7 +590,7 @@ class Class extends Component {
                       <div className="col-md-9">
                         <Select
                           name="form-field-name"
-                          multi={true}
+                          multi
                           value={selectedValue}
                           removeSelected={false}
                           onChange={this.handleChange}
@@ -600,7 +620,7 @@ class Class extends Component {
                           id="text-input"
                           name="text-input"
                           className={
-                            "form-control " + (studentError ? "is-invalid" : "")
+                            `form-control ${  studentError ? "is-invalid" : ""}`
                           }
                           placeholder="Antal"
                           value={maleStudent}
@@ -632,7 +652,7 @@ class Class extends Component {
                           id="text-input"
                           name="text-input"
                           className={
-                            "form-control " + (studentError ? "is-invalid" : "")
+                            `form-control ${  studentError ? "is-invalid" : ""}`
                           }
                           placeholder="Female Students"
                           value={femaleStudent}
@@ -719,10 +739,8 @@ const mapStateToProps = ({ classReducer }) => {
     femaleStudent
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
+const mapDispatchToProps = dispatch => ({
     classAction: bindActionCreators(classAction, dispatch)
-  };
-};
+  });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Class));

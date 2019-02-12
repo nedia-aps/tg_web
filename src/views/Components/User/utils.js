@@ -1,4 +1,4 @@
-export let styles = {
+export const styles = {
   item: {
     padding: '2px 6px',
     cursor: 'default'
@@ -14,14 +14,14 @@ export let styles = {
   menu: {
     border: 'solid 1px #ccc'
   }
-}
+};
 
 
 export function matchStateToTerm(state, value) {
   return (
     state.name.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
     state.abbr.toLowerCase().indexOf(value.toLowerCase()) !== -1
-  )
+  );
 }
 
 /**
@@ -33,22 +33,22 @@ export function matchStateToTerm(state, value) {
  * a search for "or" would return "North Carolina" above "North Dakota".
  */
 export function sortStates(a, b, value) {
-  const aLower = a.name.toLowerCase()
-  const bLower = b.name.toLowerCase()
-  const valueLower = value.toLowerCase()
-  const queryPosA = aLower.indexOf(valueLower)
-  const queryPosB = bLower.indexOf(valueLower)
+  const aLower = a.name.toLowerCase();
+  const bLower = b.name.toLowerCase();
+  const valueLower = value.toLowerCase();
+  const queryPosA = aLower.indexOf(valueLower);
+  const queryPosB = bLower.indexOf(valueLower);
   if (queryPosA !== queryPosB) {
-    return queryPosA - queryPosB
+    return queryPosA - queryPosB;
   }
-  return aLower < bLower ? -1 : 1
+  return aLower < bLower ? -1 : 1;
 }
 
 export function fakeRequest(value, cb) {
   return setTimeout(cb, 500, value ?
     getStates().filter(state => matchStateToTerm(state, value)) :
     getStates()
-  )
+  );
 }
 
 export function getStates() {
@@ -103,7 +103,6 @@ export function getStates() {
     { abbr: 'WV', name: 'West Virginia' },
     { abbr: 'WI', name: 'Wisconsin' },
     { abbr: 'WY', name: 'Wyoming' }
-  ]
+  ];
 }
-
 

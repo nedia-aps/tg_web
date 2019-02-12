@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
 import * as teacherAction from "../../redux/actions";
+
 const EmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 class Teacher extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class Teacher extends Component {
       phone: ''
     };
   }
+
   onValueChange(propertyName, event) {
     this.setState({ [propertyName]: event.target.value });
     const value = event.target.value;
@@ -46,18 +48,20 @@ class Teacher extends Component {
         }
     }
   }
+
   createTeacher(e) {
     e.preventDefault();
-    const{name,userName,email,phone}=this.state;
-    const{history}=this.props;
+    const { name, userName, email, phone } = this.state;
+    const { history } = this.props;
     this.props.teacherAction.saveTeacher({
-      name: name,
-      email: email,
-      userName:userName,
-      phone:phone,
+      name,
+      email,
+      userName,
+      phone,
       history
     });
   }
+
   onNameChange() {
     const { name } = this.state;
     if (name == "") {
@@ -66,6 +70,7 @@ class Teacher extends Component {
       this.setState({ nameError: false });
     }
   }
+
   onEmailChange() {
     const { email } = this.state;
     if (email == "" || !email.match(EmailRegex)) {
@@ -74,6 +79,7 @@ class Teacher extends Component {
       this.setState({ emailError: false });
     }
   }
+
   onUserNameChange() {
     const { userName } = this.state;
     if (userName == "") {
@@ -82,6 +88,7 @@ class Teacher extends Component {
       this.setState({ userNameError: false });
     }
   }
+
   render() {
     const {
       name,
@@ -119,7 +126,7 @@ class Teacher extends Component {
                         id="text-input"
                         name="text-input"
                         className={
-                          "form-control " + (nameError ? "is-invalid" : "")
+                          `form-control ${nameError ? "is-invalid" : ""}`
                         }
                         placeholder="Navn"
                         value={name}
@@ -142,7 +149,7 @@ class Teacher extends Component {
                         name="username-input"
                         value={userName}
                         className={
-                          "form-control " + (userNameError ? "is-invalid" : "")
+                          `form-control ${userNameError ? "is-invalid" : ""}`
                         }
                         placeholder="Brugernavn"
                         onChange={this.onValueChange.bind(this, "userName")}
@@ -165,7 +172,7 @@ class Teacher extends Component {
                         name="email-input"
                         value={email}
                         className={
-                          "form-control " + (emailError ? "is-invalid" : "")
+                          `form-control ${emailError ? "is-invalid" : ""}`
                         }
                         placeholder="E-mail"
                         onChange={this.onValueChange.bind(this, "email")}
@@ -216,11 +223,9 @@ const mapStateToProps = ({ teacherReducer }) => {
   const {} = teacherReducer;
   return {};
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    teacherAction: bindActionCreators(teacherAction, dispatch)
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  teacherAction: bindActionCreators(teacherAction, dispatch)
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   withRouter(Teacher)

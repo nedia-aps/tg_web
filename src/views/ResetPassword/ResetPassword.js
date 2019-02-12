@@ -11,11 +11,13 @@ class ResetPassword extends Component {
     this.handleSubmit= this.handleSubmit.bind(this);
 
   }
+
   handleSubmit=(values)=>{
     const {accountAction,history}= this.props;
-    let model={OldPassword: values.OldPassword,NewPassword: values.NewPassword, ConfirmPassword: values.ConfirmPassword};
+    const model={OldPassword: values.OldPassword,NewPassword: values.NewPassword, ConfirmPassword: values.ConfirmPassword};
     accountAction.resetPassword(model,history)
   }
+
   render() {
     return (
       <div className="animated fadeIn">
@@ -28,14 +30,10 @@ class ResetPassword extends Component {
     );
   }
 }
-const mapStateToProps = () => {
-  return {};
-};
-const mapDispatchToProps = dispatch => {
-  return {
+const mapStateToProps = () => ({});
+const mapDispatchToProps = dispatch => ({
     accountAction: bindActionCreators(accountAction, dispatch)
-  };
-};
+  });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   withRouter(ResetPassword)

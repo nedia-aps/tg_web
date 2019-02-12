@@ -71,7 +71,7 @@ class Tabs extends Component {
                   className={classnames({ active: this.state.activeTab === '1' })}
                   onClick={() => { this.toggle('1'); }}
                 >
-                  <i className="icon-calculator"></i>
+                  <i className="icon-calculator" />
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -79,7 +79,7 @@ class Tabs extends Component {
                   className={classnames({ active: this.state.activeTab === '2' })}
                   onClick={() => { this.toggle('2'); }}
                 >
-                  <i className="icon-basket-loaded"></i>
+                  <i className="icon-basket-loaded" />
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -87,7 +87,7 @@ class Tabs extends Component {
                   className={classnames({ active: this.state.activeTab === '3' })}
                   onClick={() => { this.toggle('3'); }}
                 >
-                  <i className="icon-pie-chart"></i>
+                  <i className="icon-pie-chart" />
                 </NavLink>
               </NavItem>
             </Nav>
@@ -110,7 +110,7 @@ class Tabs extends Component {
                   className={classnames({ active: this.state.activeTab === '1' })}
                   onClick={() => { this.toggle('1'); }}
                 >
-                  <i className="icon-calculator"></i> Calculator
+                  <i className="icon-calculator" /> Calculator
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -118,7 +118,7 @@ class Tabs extends Component {
                   className={classnames({ active: this.state.activeTab === '2' })}
                   onClick={() => { this.toggle('2'); }}
                 >
-                  <i className="icon-basket-loaded"></i> Shoping cart
+                  <i className="icon-basket-loaded" /> Shoping cart
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -126,7 +126,7 @@ class Tabs extends Component {
                   className={classnames({ active: this.state.activeTab === '3' })}
                   onClick={() => { this.toggle('3'); }}
                 >
-                  <i className="icon-pie-chart"></i> Charts
+                  <i className="icon-pie-chart" /> Charts
                 </NavLink>
               </NavItem>
             </Nav>
@@ -149,7 +149,7 @@ class Tabs extends Component {
                   className={classnames({ active: this.state.activeTab === '1' })}
                   onClick={() => { this.toggle('1'); }}
                 >
-                  <i className="icon-calculator"></i> Calculator &nbsp;<span className="badge badge-success">New</span>
+                  <i className="icon-calculator" /> Calculator &nbsp;<span className="badge badge-success">New</span>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -157,7 +157,7 @@ class Tabs extends Component {
                   className={classnames({ active: this.state.activeTab === '2' })}
                   onClick={() => { this.toggle('2'); }}
                 >
-                  <i className="icon-basket-loaded"></i> Shoping cart &nbsp;<span className="badge badge-pill badge-danger">29</span>
+                  <i className="icon-basket-loaded" /> Shoping cart &nbsp;<span className="badge badge-pill badge-danger">29</span>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -165,7 +165,7 @@ class Tabs extends Component {
                   className={classnames({ active: this.state.activeTab === '3' })}
                   onClick={() => { this.toggle('3'); }}
                 >
-                  <i className="icon-pie-chart"></i> Charts
+                  <i className="icon-pie-chart" /> Charts
                 </NavLink>
               </NavItem>
             </Nav>
@@ -183,7 +183,7 @@ class Tabs extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

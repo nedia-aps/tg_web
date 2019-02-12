@@ -10,11 +10,13 @@ class Admin extends Component {
     super(props);
     this.handleSubmit= this.handleSubmit.bind(this);
   }
+
   handleSubmit=(values)=>{
     const {accountAction,history}= this.props;
-    let model={Name: values.Name,Email: values.Email,Phone: values.Phone,UserName: values.Email,Password: values.Password, ConfirmPassword: values.ConfirmPassword};
+    const model={Name: values.Name,Email: values.Email,Phone: values.Phone,UserName: values.Email,Password: values.Password, ConfirmPassword: values.ConfirmPassword};
     accountAction.createAdmin(model,history)
   }
+
   render() {
     return (
       <div className="animated fadeIn">
@@ -27,14 +29,10 @@ class Admin extends Component {
     );
   }
 }
-const mapStateToProps = () => {
-  return {};
-};
-const mapDispatchToProps = dispatch => {
-  return {
+const mapStateToProps = () => ({});
+const mapDispatchToProps = dispatch => ({
     accountAction: bindActionCreators(accountAction, dispatch)
-  };
-};
+  });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   withRouter(Admin)
