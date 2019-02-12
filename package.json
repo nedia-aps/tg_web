@@ -4,7 +4,19 @@
   "private": true,
   "homepage": ".",
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
     "eslint": "5.3.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.1.0",
@@ -67,10 +79,10 @@
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "lint": "cross-env NODE_ENV=development eslint --cache --format=node_modules/eslint-formatter-pretty .",
-    "lint-fix": "yarn --silent lint --fix; exit 0",
+    "lint": "eslint --cache --format=node_modules/eslint-formatter-pretty .",
+    "lint-fix": "yarn --silent lint --fix; ",
     "lint-styles": "stylelint --ignore-path .eslintignore '**/*.*(css|scss)' --syntax scss",
-    "lint-styles-fix": "yarn --silent lint-styles --fix; exit 0",
+    "lint-styles-fix": "yarn --silent lint-styles --fix; ",
     "postlint-fix": "prettier --ignore-path .eslintignore --single-quote --write '**/*.{*{js,jsx,json},babelrc,eslintrc,prettierrc,stylelintrc}'",
     "postlint-styles-fix": "prettier --ignore-path .eslintignore --single-quote --write '**/*.{css,scss}'",
     "precommit": "lint-staged",
@@ -80,7 +92,7 @@
   "lint-staged": {
     "*.{js,jsx}": [
       "prettier --ignore-path .eslintignore --single-quote --write",
-      "cross-env NODE_ENV=development eslint --cache --format=pretty --fix",
+      "eslint --cache --format=pretty --fix",
       "git add"
     ],
     "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
