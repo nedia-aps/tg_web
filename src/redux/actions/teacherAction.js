@@ -77,11 +77,10 @@ export const updateTeacher = ({
         //   type: TEACHERS.ADD_TEACHER
         // });
         history.push('undervisere');
-        return true;
       } else {
         toastr.error('Fejl', 'Fejl i bruger eller kode');
-        return true;
       }
+      return true;
     })
     .catch(() => {
       // error
