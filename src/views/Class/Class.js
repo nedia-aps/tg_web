@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import DatePicker from 'react-datepicker';
-// import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 import Loadmask from 'react-redux-loadmask';
 import { connect } from 'react-redux';
@@ -45,7 +44,7 @@ class Class extends Component {
       classAction.getClassById(classId);
       // this.setState({ name: classData.name });
     } else {
-      classAction.getTeachders();
+      classAction.getTeachers();
     }
   }
 
@@ -243,6 +242,7 @@ class Class extends Component {
 
   createDateChange(date) {
     const { classAction } = this.props;
+    console.log(date);
     classAction.formChanged({ prop: 'startDate', value: date });
   }
 
@@ -348,10 +348,8 @@ class Class extends Component {
                           onChange={this.onValueChange.bind(this, 'name')}
                           onBlur={() => this.onNameChange()}
                         />
-                        {nameError ? (
+                        {nameError && (
                           <span className="is-invalid">Navn skal udfyldes</span>
-                        ) : (
-                          ''
                         )}
                       </div>
                     </div>
@@ -380,12 +378,10 @@ class Class extends Component {
                           <option value="1">Gentagende</option>
                           <option value="2">Ikke gentagende</option>
                         </select>
-                        {typeError ? (
+                        {typeError && (
                           <span className="is-invalid">
                             Kategori skal udfyldes
                           </span>
-                        ) : (
-                          ''
                         )}
                       </div>
                     </div>
@@ -559,7 +555,7 @@ class Class extends Component {
                       <div className="col-md-9">
                         <DatePicker
                           selected={startDate}
-                          onChange={this.createDateChange}
+                          onChange={this.handleChange}
                           className="form-control"
                           dateFormat="DD/MM/YYYY"
                         />
@@ -600,12 +596,10 @@ class Class extends Component {
                           placeholder="Vælg instruktør"
                           className={teacherError ? 'is-invalid' : ''}
                         />
-                        {teacherError ? (
+                        {teacherError && (
                           <span className="is-invalid">
                             Du skal vælge mindst en instruktør
                           </span>
-                        ) : (
-                          ''
                         )}
                       </div>
                     </div>
@@ -632,12 +626,10 @@ class Class extends Component {
                           )}
                           onBlur={() => this.onMaleStudentBlur()}
                         />
-                        {studentError ? (
+                        {studentError && (
                           <span className="is-invalid">
                             Antal drenge og piger skal udfyldes
                           </span>
-                        ) : (
-                          ''
                         )}
                       </div>
                     </div>
@@ -664,12 +656,10 @@ class Class extends Component {
                           )}
                           onBlur={() => this.onFeMaleStudentBlur()}
                         />
-                        {studentError ? (
+                        {studentError && (
                           <span className="is-invalid">
                             Antal drenge og piger skal udfyldes
                           </span>
-                        ) : (
-                          ''
                         )}
                       </div>
                     </div>

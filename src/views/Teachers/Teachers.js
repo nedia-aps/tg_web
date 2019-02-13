@@ -24,7 +24,7 @@ class Teachers extends Component {
   // eslint-disable-next-line
   componentWillMount() {
     const { teacherAction } = this.props;
-    teacherAction.getTeachder();
+    teacherAction.getTeacher();
   }
 
   handleClick(data) {

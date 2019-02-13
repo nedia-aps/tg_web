@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { withRouter } from "react-router-dom";
-import * as teacherAction from "../../redux/actions";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
+import * as teacherActions from '../../redux/actions';
 // eslint-disable-next-line
 const EmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 class Teacher extends Component {
@@ -13,37 +13,42 @@ class Teacher extends Component {
       name: teacher ? teacher.name : '',
       nameError: false,
       userName: teacher ? teacher.email : '',
-      userNameError: false,
+      // userNameError: false,
       email: teacher ? teacher.email : '',
       emailError: false,
-      phone: teacher && teacher.phone ? teacher.phone : ''
+      phone: teacher && teacher.phone ? teacher.phone : '',
     };
   }
 
+  componentDidMount() {
+    this.nameInput.focus();
+  }
+
   onValueChange(propertyName, event) {
-    this.setState({ [propertyName]: event.target.value });
-    const value = event.target.value;
+    const { value } = event.target;
+    this.setState({ [propertyName]: value });
 
     switch (propertyName) {
-      case "name":
-        if (value === "" || value.trim() === "") {
+      case 'name':
+        if (value === '' || value.trim() === '') {
           this.setState({ nameError: true });
 
           // error = true;
         }
         break;
-      case "userName":
-        if (value === "" || value.trim() === "") {
-          this.setState({ userNameError: true });
-
+      case 'userName':
+        if (value === '' || value.trim() === '') {
+          // this.setState({ userNameError: true });
           // error = true;
-        } break;
-      case "email":
-        if (value === "" || value.trim() === "" || !value.match(EmailRegex)) {
+        }
+        break;
+      case 'email':
+        if (value === '' || value.trim() === '' || !value.match(EmailRegex)) {
           this.setState({ emailError: true });
 
           // error = true;
-        } break;
+        }
+        break;
       default:
         break;
     }
@@ -52,13 +57,13 @@ class Teacher extends Component {
   createTeacher(e) {
     e.preventDefault();
     const { name, email, phone } = this.state;
-    const { history, teacher } = this.props;
+    const { history, teacher, teacherAction } = this.props;
     let error = false;
-    if (name === "" || name.trim() === "") {
+    if (name === '' || name.trim() === '') {
       this.setState({ nameError: true });
       error = true;
     }
-    if (email === "" || email.trim() === "" || !email.match(EmailRegex)) {
+    if (email === '' || email.trim() === '' || !email.match(EmailRegex)) {
       this.setState({ emailError: true });
       error = true;
     }
@@ -67,28 +72,28 @@ class Teacher extends Component {
       return false;
     }
     if (teacher) {
-      this.props.teacherAction.updateTeacher({
+      teacherAction.updateTeacher({
         id: teacher.id,
         name,
         email,
         userName: email,
         phone,
-        history
+        history,
       });
     } else {
-      this.props.teacherAction.saveTeacher({
+      teacherAction.saveTeacher({
         name,
         email,
         userName: email,
         phone,
-        history
+        history,
       });
     }
   }
 
   onNameChange() {
     const { name } = this.state;
-    if (name === "") {
+    if (name === '') {
       this.setState({ nameError: true });
     } else {
       this.setState({ nameError: false });
@@ -97,7 +102,7 @@ class Teacher extends Component {
 
   onEmailChange() {
     const { email } = this.state;
-    if (email === "" || !email.match(EmailRegex)) {
+    if (email === '' || !email.match(EmailRegex)) {
       this.setState({ emailError: true });
     } else {
       this.setState({ emailError: false });
@@ -106,29 +111,22 @@ class Teacher extends Component {
 
   onUserNameChange() {
     const { userName } = this.state;
-    if (userName === "") {
-      this.setState({ userNameError: true });
+    if (userName === '') {
+      // this.setState({ userNameError: true });
     } else {
-      this.setState({ userNameError: false });
+      // this.setState({ userNameError: false });
     }
   }
 
   render() {
     const { teacher } = this.props;
-    const {
-      name,
-      email,
-      phone,
-      nameError,
-      emailError,
-    } = this.state;
+    const { name, email, phone, nameError, emailError } = this.state;
     return (
       <div className="animated fadeIn">
         <div className="row">
           <div className="col-md-6">
             <div className="card">
               <div className="card-header">
-
                 <strong> {teacher ? 'Rediger' : 'Opret'} </strong> bruger
               </div>
               <div className="card-block">
@@ -150,20 +148,24 @@ class Teacher extends Component {
                         type="text"
                         id="text-input"
                         name="text-input"
-                        className={
-                          `form-control ${nameError ? "is-invalid" : ""}`
-                        }
+                        className={`form-control ${
+                          nameError ? 'is-invalid' : ''
+                        }`}
                         placeholder="Navn"
                         value={name}
-                        onChange={this.onValueChange.bind(this, "name")}
+                        ref={input => {
+                          this.nameInput = input;
+                        }}
+                        onChange={this.onValueChange.bind(this, 'name')}
                         onBlur={() => this.onNameChange()}
                       />
-                      {nameError
-                        ? <span className="is-invalid">Navn skal udfyldes</span>
-                        : ""}
+                      {nameError ? (
+                        <span className="is-invalid">Navn skal udfyldes</span>
+                      ) : (
+                        ''
+                      )}
                     </div>
                   </div>
-
 
                   <div className="form-group row">
                     <label
@@ -178,17 +180,21 @@ class Teacher extends Component {
                         id="email-input"
                         name="email-input"
                         value={email}
-                        className={
-                          `form-control ${emailError ? "is-invalid" : ""}`
-                        }
+                        className={`form-control ${
+                          emailError ? 'is-invalid' : ''
+                        }`}
                         placeholder="E-mail"
-                        onChange={this.onValueChange.bind(this, "email")}
+                        onChange={this.onValueChange.bind(this, 'email')}
                         onBlur={() => this.onEmailChange()}
-                        disabled={!!this.props.teacher.email}
+                        disabled={!!teacher.email}
                       />
-                      {emailError
-                        ? <span className="is-invalid">Du skal udfylde en gyldig e-mail </span>
-                        : ""}
+                      {emailError ? (
+                        <span className="is-invalid">
+                          Du skal udfylde en gyldig e-mail{' '}
+                        </span>
+                      ) : (
+                        ''
+                      )}
                     </div>
                   </div>
                   <div className="form-group row">
@@ -206,7 +212,7 @@ class Teacher extends Component {
                         name="phone-input"
                         className="form-control"
                         placeholder="Tlf nr"
-                        onChange={this.onValueChange.bind(this, "phone")}
+                        onChange={this.onValueChange.bind(this, 'phone')}
                       />
                     </div>
                   </div>
@@ -237,9 +243,10 @@ const mapStateToProps = ({ teacherReducer }) => {
   return { teacher };
 };
 const mapDispatchToProps = dispatch => ({
-  teacherAction: bindActionCreators(teacherAction, dispatch)
+  teacherAction: bindActionCreators(teacherActions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  withRouter(Teacher)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withRouter(Teacher));

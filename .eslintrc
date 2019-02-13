@@ -43,6 +43,7 @@
       }
     ],
     "no-console": "off",
+    "no-else-return": "off",
     "no-use-before-define": "off",
     "no-multi-assign": "off",
     "no-underscore-dangle": "off",
