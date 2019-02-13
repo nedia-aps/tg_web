@@ -135,7 +135,7 @@ export const getTeachers = () => dispatch => {
 };
 export const getClasses = () => dispatch => {
   dispatch(showLoadmask());
-  const getClass = baseURL + REST_API.Class.getClass;
+  const getClass = baseURL + REST_API.Class.GetClasses;
   axios
     .get(getClass)
     .then(response => {
@@ -227,7 +227,7 @@ export const dashBordData = () => dispatch => {
 };
 export const getClassById = classId => dispatch => {
   dispatch(showLoadmask());
-  const getClass = `${baseURL + REST_API.Class.GetClass}?id=${classId}`;
+  const getClass = `${baseURL + REST_API.Class.GetClasses}?id=${classId}`;
   axios
     .get(getClass)
     .then(response => {
