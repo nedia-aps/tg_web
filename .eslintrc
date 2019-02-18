@@ -42,6 +42,7 @@
         "allowChildren": false
       }
     ],
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
     "no-console": "off",
     "no-else-return": "off",
     "no-use-before-define": "off",

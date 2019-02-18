@@ -1,44 +1,48 @@
-import React, { Component, PropTypes } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { withRouter } from "react-router-dom";
-import * as userAction from "../../../redux/actions";
-import Pagination from "./Pagination";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
+import * as userActions from '../../redux/actions';
+// import Pagination from './Pagination';
 
 class TeacherList extends Component {
   constructor(props, context) {
     super(props, context);
     this.handleClick = this.handleClick.bind(this);
     // an example array of items to be paged
-    const exampleItems = _.range(1, 151).map(i => ({ id: i, name: `Item ${i}` }));
+    // const exampleItems = _.range(1, 151).map(i => ({
+    //   id: i,
+    //   name: `Item ${i}`,
+    // }));
 
+    // this.state = {
+    //   exampleItems,
+    //   // pageOfItems: [],
+    // };
     this.state = {
-      exampleItems,
-      pageOfItems: []
-    };
-    this.state = {
-      todos: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"],
+      todos: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'],
       currentPage: 1,
-      todosPerPage: 3
+      todosPerPage: 3,
     };
-    this.handleClick = this.handleClick.bind(this);
     // bind function in constructor instead of render (https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
     this.onChangePage = this.onChangePage.bind(this);
   }
 
+  componentWillMount() {
+    const { userAction } = this.props;
+    userAction.userList();
+  }
+
   handleClick(event) {
     this.setState({
-      currentPage: Number(event.target.id)
+      currentPage: Number(event.target.id),
     });
   }
 
-  onChangePage(pageOfItems) {
+  onChangePage() {
+    // pageOfItems
     // update state with new page of items
-    this.setState({ pageOfItems });
-  }
-
-  componentWillMount() {
-    this.props.userAction.userList();
+    // this.setState({ pageOfItems });
   }
 
   render() {
@@ -47,11 +51,11 @@ class TeacherList extends Component {
     const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
     const currentTodos = todos.slice(indexOfFirstTodo, indexOfLastTodo);
 
-    const renderTodos = currentTodos.map((todo, index) => <li key={index}>{todo}</li>);
+    const renderTodos = currentTodos.map(todo => <li key={todo}>{todo}</li>);
 
     // Logic for displaying page numbers
     const pageNumbers = [];
-    for (let i = 1; i <= Math.ceil(todos.length / todosPerPage); i++) {
+    for (let i = 1; i <= Math.ceil(todos.length / todosPerPage); i += 1) {
       pageNumbers.push(i);
     }
 
@@ -59,7 +63,7 @@ class TeacherList extends Component {
       <li key={number} id={number} onClick={this.handleClick}>
         {number}
       </li>
-      ));
+    ));
     return (
       <div className="animated fadeIn">
         <div className="row">
@@ -85,13 +89,14 @@ const mapStateToProps = ({ userReducerTest }) => {
   const { userObject, userList } = userReducerTest;
   return {
     userObject,
-    userList
+    userList,
   };
 };
 const mapDispatchToProps = dispatch => ({
-  userAction: bindActionCreators(userAction, dispatch)
+  userAction: bindActionCreators(userActions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  withRouter(UsersList)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withRouter(TeacherList));

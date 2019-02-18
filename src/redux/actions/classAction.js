@@ -55,7 +55,7 @@ export const saveClass = ({
         dispatch({
           type: CLASSES.ADD_CLASS,
         });
-        toastr.success('Fuldført', 'Class Created Successfully.');
+        toastr.success('Fuldført', 'Hold er coprettet.');
       }
       return true;
     })

@@ -403,7 +403,7 @@ class Class extends Component {
                           >
                             <option value="1">Mandag</option>
                             <option value="2">Tirsdag</option>
-                            <option value="3"> Onsdag</option>
+                            <option value="3">Onsdag</option>
                             <option value="4">Torsdag</option>
                             <option value="5">Fredag</option>
                           </select>
@@ -618,7 +618,7 @@ class Class extends Component {
                           className={`form-control ${
                             studentError ? 'is-invalid' : ''
                           }`}
-                          placeholder="Antal"
+                          placeholder="Antal drenge"
                           value={maleStudent}
                           onChange={this.onValueChange.bind(
                             this,
@@ -648,7 +648,7 @@ class Class extends Component {
                           className={`form-control ${
                             studentError ? 'is-invalid' : ''
                           }`}
-                          placeholder="Female Students"
+                          placeholder="Antal piger"
                           value={femaleStudent}
                           onChange={this.onValueChange.bind(
                             this,

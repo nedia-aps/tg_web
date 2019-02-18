@@ -71,7 +71,7 @@ class TimeLog extends Component {
                       <tr>
                         <th>Navn</th>
                         <th>Dato</th>
-                        <th>Time</th>
+                        <th>Tid</th>
                       </tr>
                     </thead>
                     <tbody>

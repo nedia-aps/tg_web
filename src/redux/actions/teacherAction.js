@@ -35,7 +35,7 @@ export const saveTeacher = ({
     .then(response => {
       const baseModel = response.data;
       if (baseModel.success) {
-        toastr.success('Fuldført', 'Teacher Created');
+        toastr.success('Fuldført', 'Instruktør Created');
         // dispatch({
         //   type: TEACHERS.ADD_TEACHER
         // });
@@ -47,7 +47,7 @@ export const saveTeacher = ({
     })
     .catch(() => {
       // error
-      toastr.error('Fejl', 'There is some issue.');
+      toastr.error('Fejl', 'Der skete en fejl.');
     });
 };
 export const updateTeacher = ({
@@ -71,7 +71,7 @@ export const updateTeacher = ({
     .then(response => {
       const baseModel = response.data;
       if (baseModel.success) {
-        toastr.success('Fuldført', 'Teacher Updated');
+        toastr.success('Fuldført', 'Instruktør oprette');
         // dispatch({
         //   type: TEACHERS.ADD_TEACHER
         // });
@@ -83,7 +83,7 @@ export const updateTeacher = ({
     })
     .catch(() => {
       // error
-      toastr.error('Fejl', 'There is some issue.');
+      toastr.error('Fejl', 'Der skete en fejl.');
     });
 };
 export const getTeacher = () => dispatch => {

@@ -9,14 +9,23 @@ class Page500 extends Component {
             <div className="col-md-6">
               <div className="clearfix">
                 <h1 className="float-left display-3 mr-4">500</h1>
-                <h4 className="pt-3">Houston, we have a problem!</h4>
-                <p className="text-muted">The page you are looking for is temporarily unavailable.</p>
+                <h4 className="pt-3">Der skete en fejl!</h4>
+                <p className="text-muted">Siden finds ikke.</p>
               </div>
               <div className="input-prepend input-group">
-                <span className="input-group-addon"><i className="fa fa-search" /></span>
-                <input className="form-control" size="16" type="text" placeholder="What are you looking for?" />
+                <span className="input-group-addon">
+                  <i className="fa fa-search" />
+                </span>
+                <input
+                  className="form-control"
+                  size="16"
+                  type="text"
+                  placeholder="Hvad søger du?"
+                />
                 <span className="input-group-btn">
-                  <button className="btn btn-info" type="button">Search</button>
+                  <button className="btn btn-info" type="button">
+                    Søg
+                  </button>
                 </span>
               </div>
             </div>
