@@ -1,16 +1,17 @@
-import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Sidebar extends Component {
   handleClick(e) {
     e.preventDefault();
-    e.target.parentElement.classList.toggle("open");
+    e.target.parentElement.classList.toggle('open');
   }
 
   activeRoute(routeName) {
-    return this.props.location.pathname.indexOf(routeName) > -1
-      ? "nav-item nav-dropdown open"
-      : "nav-item nav-dropdown";
+    const { location } = this.props;
+    return location.pathname.indexOf(routeName) > -1
+      ? 'nav-item nav-dropdown open'
+      : 'nav-item nav-dropdown';
   }
 
   // secondLevelActive(routeName) {
@@ -28,7 +29,7 @@ class Sidebar extends Component {
                 className="nav-link"
                 activeClassName="active"
               >
-                <i className="icon-speedometer" /> Statistik{" "}
+                <i className="icon-speedometer" /> Statistik{' '}
               </NavLink>
             </li>
 
@@ -56,7 +57,7 @@ class Sidebar extends Component {
                 className="nav-link"
                 activeClassName="active"
               >
-                <i className="icon-speech" />  Mangler log
+                <i className="icon-speech" /> Mangler log
               </NavLink>
               <NavLink
                 to="/admin"
@@ -66,7 +67,6 @@ class Sidebar extends Component {
                 <i className="icon-speech" /> Opret admin
               </NavLink>
             </li>
-
           </ul>
         </nav>
       </div>
