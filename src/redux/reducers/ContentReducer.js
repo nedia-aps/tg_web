@@ -15,7 +15,7 @@ export default (state = INITIAL_STATE, action) => {
     case CONTENT_CHANGED:
       return {
         ...state,
-        [action.payload.prop]: action.payload.value
+        [action.payload.prop]: action.payload.value,
       };
     default:
       return state;

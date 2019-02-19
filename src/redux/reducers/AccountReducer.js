@@ -1,13 +1,13 @@
-import { USER_LOADING_CHANGED, ACCOUNT_CHANGED, USER } from "../types";
+import { USER_LOADING_CHANGED, ACCOUNT_CHANGED, USER } from '../types';
 
 const INITIAL_STATE = {
-  name: "",
-  password: "",
+  name: '',
+  password: '',
   isLogin: false,
   loading: false,
-  message: "",
+  message: '',
   isAuthenticated: false,
-  loggedUser: null
+  loggedUser: null,
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -15,17 +15,17 @@ export default (state = INITIAL_STATE, action) => {
     case ACCOUNT_CHANGED:
       return {
         ...state,
-        [action.payload.prop]: action.payload.value
+        [action.payload.prop]: action.payload.value,
       };
     case USER_LOADING_CHANGED:
       return {
         ...state,
-        loading: INITIAL_STATE.loading
+        loading: INITIAL_STATE.loading,
       };
     case USER.TOKEN_FETCHED: {
       return {
         ...state,
-        isLogin: action.payload
+        isLogin: action.payload,
       };
     }
     case USER.LOGIN_SUCCESS: {
@@ -33,14 +33,14 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isAuthenticated: loginSuccess,
-        loggedUser: action.payload
+        loggedUser: action.payload,
       };
     }
     case USER.LOGOUT_SUCCESS: {
       return {
         ...state,
         isAuthenticated: false,
-        loggedUser: null
+        loggedUser: null,
       };
     }
     default:

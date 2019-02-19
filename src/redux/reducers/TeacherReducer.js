@@ -1,11 +1,11 @@
-import { USER_CHANGED, TEACHERS } from "../types";
+import { USER_CHANGED, TEACHERS } from '../types';
 
 const INITIAL_STATE = {
-  userObject: "",
-  userId: "",
+  userObject: '',
+  userId: '',
   userList: [],
   teachersList: [],
-  selectedCountry: { Id: 1125, Name: "USA" },
+  selectedCountry: { Id: 1125, Name: 'USA' },
   created: false,
   teacher: '',
   isDelete: false,
@@ -16,7 +16,7 @@ export default (state = INITIAL_STATE, action) => {
     case USER_CHANGED:
       return {
         ...state,
-        [action.payload.prop]: action.payload.value
+        [action.payload.prop]: action.payload.value,
       };
     case TEACHERS.GET_TEACHERS:
       return {
@@ -24,7 +24,7 @@ export default (state = INITIAL_STATE, action) => {
         teachersList: action.payload,
         created: false,
         teacher: '',
-        isDelete: false
+        isDelete: false,
       };
     case TEACHERS.SET_TEACHER:
       return {
@@ -34,12 +34,12 @@ export default (state = INITIAL_STATE, action) => {
     case TEACHERS.ADD_TEACHER:
       return {
         ...state,
-        created: true
+        created: true,
       };
     case TEACHERS.DELETE_TEACHER:
       return {
         ...state,
-        isDelete: action.payload
+        isDelete: action.payload,
       };
     default:
       return state;

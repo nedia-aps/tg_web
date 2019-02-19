@@ -1,55 +1,58 @@
-import React, { Component } from "react";
-import Select from "react-select";
-import DatePicker from "react-datepicker";
-import moment from "moment";
-import {DatetimePicker} from 'rc-datetime-picker';
-import "react-datepicker/dist/react-datepicker.css";
-import {
-  Button,
-  ButtonDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from "reactstrap";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { withRouter } from "react-router-dom";
-import * as classAction from "../../redux/actions";
-import "react-select/dist/react-select.css";
-import { debuglog } from "util";
+import React, { Component } from 'react';
+import Select from 'react-select';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import { DatetimePicker } from 'rc-datetime-picker';
+import 'react-datepicker/dist/react-datepicker.css';
+// import {
+//   Button,
+//   ButtonDropdown,
+//   DropdownToggle,
+//   DropdownMenu,
+//   DropdownItem,
+// } from 'reactstrap';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
+import * as classActions from '..';
+import 'react-select/dist/react-select.css';
+// import { debuglog } from 'util';
 
+// eslint-disable-next-line
 const EmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-const formats = ["MMM d yyyy", "MMM d yy", "d"];
-const options =
-[
-  {
-    value: 'foo', label: 'Foo'
-  },
-  {
-    value: 'bar', label: 'Bar'
-  },
-  {
-    value: 'baz', label: 'Baz'
-  }
-];
+// const formats = ['MMM d yyyy', 'MMM d yy', 'd'];
+// const options = [
+//   {
+//     value: 'foo',
+//     label: 'Foo',
+//   },
+//   {
+//     value: 'bar',
+//     label: 'Bar',
+//   },
+//   {
+//     value: 'baz',
+//     label: 'Baz',
+//   },
+// ];
 class Class extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: "",
+      name: '',
       nameError: false,
-      userName: "",
-      userNameError: false,
-      email: "",
-      emailError: false,
+      // userName: '',
+      // userNameError: false,
+      // email: '',
+      // emailError: false,
       startDate: moment(),
       endDate: moment(),
-      type: "",
-      selectedOption: "",
-      value: '',
+      type: '',
+      // selectedOption: '',
+      // value: '',
       selectedValue: [],
-      moment: moment()
+      momentValue: moment(),
     };
 
     this.createDateChange = this.createDateChange.bind(this);
@@ -60,40 +63,46 @@ class Class extends Component {
   }
 
   onValueChange(propertyName, event) {
-    this.setState({ [propertyName]: event.target.value });
-    const value = event.target.value;
+    const { value } = event.target;
+    this.setState({ [propertyName]: value });
     switch (propertyName) {
-      case "name":
-        if (value === "" || value.trim() === "") {
-          this.setState({ nameError: true });
+      case 'name':
+        if (value === '' || value.trim() === '') {
+          // this.setState({ nameError: true });
           // error = true;
         }
-      case "userName":
-        if (value === "" || value.trim() === "") {
-          this.setState({ userNameError: true });
+        break;
+      case 'userName':
+        if (value === '' || value.trim() === '') {
+          // this.setState({ userNameError: true });
           // error = true;
         }
-      case "email":
-        if (value === "" || value.trim() === "" || !value.match(EmailRegex)) {
-          this.setState({ emailError: true });
+        break;
+      case 'email':
+        if (value === '' || value.trim() === '' || !value.match(EmailRegex)) {
+          // this.setState({ emailError: true });
           // error = true;
         }
+        break;
+      default:
+        break;
     }
   }
 
   createClass(e) {
     e.preventDefault();
-    const { name } = this.state;
-    this.props.classAction.saveClass({
+    const { name, startDate, endDate } = this.state;
+    const { classAction } = this.props;
+    classAction.saveClass({
       name,
-      startDate: this.state.startDate._d, // "Tue, 24 Jan 2018 17:26:26 GMT",
-      endDate: this.state.endDate._d // "Tue, 25 Jan 2018 17:26:26 GMT"
+      startDate: startDate._d, // "Tue, 24 Jan 2018 17:26:26 GMT",
+      endDate: endDate._d, // "Tue, 25 Jan 2018 17:26:26 GMT"
     });
   }
 
   onNameChange() {
     const { name } = this.state;
-    if (name == "") {
+    if (name === '') {
       this.setState({ nameError: true });
     } else {
       this.setState({ nameError: false });
@@ -111,57 +120,59 @@ class Class extends Component {
 
   createDateChange(date) {
     this.setState({
-      startDate: date
+      startDate: date,
     });
   }
 
   endDateChange(date) {
     this.setState({
-      endDate: date
+      endDate: date,
     });
   }
 
   handleChange = selectedOption => {
-    
-    const arr=[];
-    selectedOption.forEach((element) => {
+    const arr = [];
+    selectedOption.forEach(element => {
       arr.push(element.value);
-  });
-     // selectedOption.map(u => ()=> {
-     // arr.push(selectedOption[0].value)
+    });
+    // selectedOption.map(u => ()=> {
+    // arr.push(selectedOption[0].value)
     // })
-    this.setState({ selectedOption ,selectedValue:arr});
-    
+    this.setState({ selectedValue: arr });
+
     // console.log(`Selected: ${selectedOption.label}`);
   };
 
-  cbChange(event){
+  cbChange(event) {
     alert(event.target.value);
   }
 
   // handleChange(value) {
   //   this.setState({ value });
   // }
-  handleChangeDate = (moment) => {
+  handleChangeDate = momentValue => {
     this.setState({
-      moment
+      momentValue,
     });
-  }
+  };
 
   render() {
     const {
       name,
-      userName,
-      email,
+      // userName,
+      // email,
       nameError,
-      emailError,
-      userNameError,
+      // emailError,
+      // userNameError,
       type,
-      selectedOption,
-      selectedValue
+      // selectedOption,
+      selectedValue,
+      startDate,
+      endDate,
+      momentValue,
     } = this.state;
-    const value = selectedOption && selectedOption.value;
-    
+    // const value = selectedOption && selectedOption.value;
+
     return (
       <div className="animated fadeIn">
         <div className="row">
@@ -189,12 +200,12 @@ class Class extends Component {
                         type="text"
                         id="text-input"
                         name="text-input"
-                        className={
-                          `form-control ${  nameError ? "is-invalid" : ""}`
-                        }
+                        className={`form-control ${
+                          nameError ? 'is-invalid' : ''
+                        }`}
                         placeholder="Navn"
                         value={name}
-                        onChange={this.onValueChange.bind(this, "name")}
+                        onChange={this.onValueChange.bind(this, 'name')}
                         onBlur={() => this.onNameChange()}
                       />
                     </div>
@@ -222,7 +233,7 @@ class Class extends Component {
                       </select>
                     </div>
                   </div>
-                  {type == 1 ? (
+                  {type === 1 ? (
                     <div>
                       <div className="form-group row">
                         <label
@@ -270,7 +281,7 @@ class Class extends Component {
                     </label>
                     <div className="col-md-9">
                       <DatePicker
-                        selected={this.state.startDate}
+                        selected={startDate}
                         onChange={this.createDateChange}
                         showTimeSelect
                         dateFormat="LLL"
@@ -287,7 +298,7 @@ class Class extends Component {
                     </label>
                     <div className="col-md-9">
                       <DatePicker
-                        selected={this.state.endDate}
+                        selected={endDate}
                         onChange={this.endDateChange}
                         showTimeSelect
                         dateFormat="LLL"
@@ -310,13 +321,11 @@ class Class extends Component {
                         removeSelected={false}
                         onChange={this.handleChange}
                         options={[
-                          { value: "one", label: "One" },
-                          { value: "two", label: "Two" }
+                          { value: 'one', label: 'One' },
+                          { value: 'two', label: 'Two' },
                         ]}
                       />
-                     
                     </div>
-                    
                   </div>
                   <div className="form-group row">
                     <label
@@ -325,14 +334,13 @@ class Class extends Component {
                     >
                       Teachers
                     </label>
-                  <div className="col-md-9">
-                    
-                  <DatetimePicker
-                    moment={this.state.moment}
-                    onChange={this.handleChangeDate}
-                  />
+                    <div className="col-md-9">
+                      <DatetimePicker
+                        moment={momentValue}
+                        onChange={this.handleChangeDate}
+                      />
                     </div>
-                    </div>
+                  </div>
                 </form>
               </div>
 
@@ -356,16 +364,19 @@ class Class extends Component {
     );
   }
 }
-const mapStateToProps = ({ classReducer,teacherReducer }) => {
-  const { userObject} = classReducer;
-  const { teachersList} = teacherReducer;
+const mapStateToProps = ({ classReducer, teacherReducer }) => {
+  const { userObject } = classReducer;
+  const { teachersList } = teacherReducer;
   return {
     userObject,
-    teachersList
+    teachersList,
   };
 };
 const mapDispatchToProps = dispatch => ({
-    classAction: bindActionCreators(classAction, dispatch)
-  });
+  classAction: bindActionCreators(classActions, dispatch),
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Class));
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withRouter(Class));

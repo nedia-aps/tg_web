@@ -1,70 +1,76 @@
-import React, { Component } from "react";
-import {
-  Button,
-  ButtonDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from "reactstrap";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { withRouter } from "react-router-dom";
-import * as teacherAction from "../../redux/actions";
+import React, { Component } from 'react';
+// import {
+//   Button,
+//   ButtonDropdown,
+//   DropdownToggle,
+//   DropdownMenu,
+//   DropdownItem,
+// } from 'reactstrap';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
+import * as teacherActions from '..';
 
+// eslint-disable-next-line
 const EmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 class Teacher extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: "",
+      name: '',
       nameError: false,
-      userName: "",
+      userName: '',
       userNameError: false,
-      email: "",
+      email: '',
       emailError: false,
-      phone: ''
+      phone: '',
     };
   }
 
   onValueChange(propertyName, event) {
-    this.setState({ [propertyName]: event.target.value });
-    const value = event.target.value;
+    const { value } = event.target;
+    this.setState({ [propertyName]: value });
     switch (propertyName) {
-      case "name":
-        if (value === "" || value.trim() === "") {
+      case 'name':
+        if (value === '' || value.trim() === '') {
           this.setState({ nameError: true });
           // error = true;
         }
-      case "userName":
-        if (value === "" || value.trim() === "") {
+        break;
+      case 'userName':
+        if (value === '' || value.trim() === '') {
           this.setState({ userNameError: true });
           // error = true;
         }
-      case "email":
-        if (value === "" || value.trim() === "" || !value.match(EmailRegex)) {
+        break;
+      case 'email':
+        if (value === '' || value.trim() === '' || !value.match(EmailRegex)) {
           this.setState({ emailError: true });
           // error = true;
         }
+        break;
+      default:
+        break;
     }
   }
 
   createTeacher(e) {
     e.preventDefault();
     const { name, userName, email, phone } = this.state;
-    const { history } = this.props;
-    this.props.teacherAction.saveTeacher({
+    const { history, teacherAction } = this.props;
+    teacherAction.saveTeacher({
       name,
       email,
       userName,
       phone,
-      history
+      history,
     });
   }
 
   onNameChange() {
     const { name } = this.state;
-    if (name == "") {
+    if (name === '') {
       this.setState({ nameError: true });
     } else {
       this.setState({ nameError: false });
@@ -73,7 +79,7 @@ class Teacher extends Component {
 
   onEmailChange() {
     const { email } = this.state;
-    if (email == "" || !email.match(EmailRegex)) {
+    if (email === '' || !email.match(EmailRegex)) {
       this.setState({ emailError: true });
     } else {
       this.setState({ emailError: false });
@@ -82,7 +88,7 @@ class Teacher extends Component {
 
   onUserNameChange() {
     const { userName } = this.state;
-    if (userName == "") {
+    if (userName === '') {
       this.setState({ userNameError: true });
     } else {
       this.setState({ userNameError: false });
@@ -125,12 +131,12 @@ class Teacher extends Component {
                         type="text"
                         id="text-input"
                         name="text-input"
-                        className={
-                          `form-control ${nameError ? "is-invalid" : ""}`
-                        }
+                        className={`form-control ${
+                          nameError ? 'is-invalid' : ''
+                        }`}
                         placeholder="Navn"
                         value={name}
-                        onChange={this.onValueChange.bind(this, "name")}
+                        onChange={this.onValueChange.bind(this, 'name')}
                         onBlur={() => this.onNameChange()}
                       />
                     </div>
@@ -148,11 +154,11 @@ class Teacher extends Component {
                         id="username-input"
                         name="username-input"
                         value={userName}
-                        className={
-                          `form-control ${userNameError ? "is-invalid" : ""}`
-                        }
+                        className={`form-control ${
+                          userNameError ? 'is-invalid' : ''
+                        }`}
                         placeholder="Brugernavn"
-                        onChange={this.onValueChange.bind(this, "userName")}
+                        onChange={this.onValueChange.bind(this, 'userName')}
                         onBlur={() => this.onNameChange()}
                       />
                     </div>
@@ -171,11 +177,11 @@ class Teacher extends Component {
                         id="email-input"
                         name="email-input"
                         value={email}
-                        className={
-                          `form-control ${emailError ? "is-invalid" : ""}`
-                        }
+                        className={`form-control ${
+                          emailError ? 'is-invalid' : ''
+                        }`}
                         placeholder="E-mail"
-                        onChange={this.onValueChange.bind(this, "email")}
+                        onChange={this.onValueChange.bind(this, 'email')}
                         onBlur={() => this.onEmailChange()}
                       />
                     </div>
@@ -219,14 +225,15 @@ class Teacher extends Component {
     );
   }
 }
-const mapStateToProps = ({ teacherReducer }) => {
-  const {} = teacherReducer;
-  return {};
-};
+const mapStateToProps = () =>
+  // teacherReducer
+  // const {} = teacherReducer;
+  ({});
 const mapDispatchToProps = dispatch => ({
-  teacherAction: bindActionCreators(teacherAction, dispatch)
+  teacherAction: bindActionCreators(teacherActions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  withRouter(Teacher)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withRouter(Teacher));
