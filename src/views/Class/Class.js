@@ -254,7 +254,6 @@ class Class extends Component {
 
   createDateChange(date) {
     const { classAction } = this.props;
-    console.log(date);
     classAction.formChanged({ prop: 'startDate', value: date });
   }
 
@@ -266,6 +265,7 @@ class Class extends Component {
   handleChange = selectedOption => {
     const { classAction } = this.props;
     const arr = [];
+    console.log(selectedOption);
     selectedOption.forEach(element => {
       arr.push(element.value);
     });
@@ -580,7 +580,7 @@ class Class extends Component {
                       <div className="col-md-9">
                         <DatePicker
                           selected={startDate}
-                          onChange={this.handleChange}
+                          onChange={this.createDateChange}
                           className="form-control"
                           dateFormat="DD/MM/YYYY"
                         />
