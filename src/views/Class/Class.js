@@ -56,7 +56,8 @@ class Class extends Component {
   }
 
   componentWillUnmount() {
-    this.onResetClick();
+    const { classAction } = this.props;
+    classAction.classFormReset();
   }
 
   onValueChange(propertyName, event) {
