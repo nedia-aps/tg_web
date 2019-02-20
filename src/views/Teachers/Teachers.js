@@ -106,7 +106,7 @@ class Teachers extends Component {
                       history.push('teacher');
                     }}
                   >
-                    <i className="icon-user-follow icons font-2xl d-block" />
+                    <i className="icon-user-follow icons font-2xl" />
                   </a>
                 </div>
                 <div className="card-block">

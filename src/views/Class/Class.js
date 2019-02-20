@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'moment/locale/da';
 import 'react-datepicker/dist/react-datepicker.css';
 import Loadmask from 'react-redux-loadmask';
 import { connect } from 'react-redux';
@@ -34,6 +36,7 @@ class Class extends Component {
     this.cbChange = this.cbChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.onResetClick = this.onResetClick.bind(this);
+    moment.locale('da');
     // this.onClassCategoryChange = this.endDateChange.bind(this);
   }
 
@@ -46,6 +49,14 @@ class Class extends Component {
     } else {
       classAction.getTeachers();
     }
+  }
+
+  componentDidMount() {
+    this.nameInput.focus();
+  }
+
+  componentWillUnmount() {
+    this.onResetClick();
   }
 
   onValueChange(propertyName, event) {
@@ -290,7 +301,17 @@ class Class extends Component {
   }
 
   onResetClick() {
-    // this.props.classAction.classFormReset();
+    const { classAction } = this.props;
+    classAction.classFormReset();
+    this.setState(
+      {
+        nameError: false,
+        typeError: false,
+        teacherError: false,
+        studentError: false,
+      },
+      () => this.nameInput.focus(),
+    );
   }
 
   render() {
@@ -345,6 +366,9 @@ class Class extends Component {
                           }`}
                           placeholder="Navn"
                           value={name}
+                          ref={input => {
+                            this.nameInput = input;
+                          }}
                           onChange={this.onValueChange.bind(this, 'name')}
                           onBlur={() => this.onNameChange()}
                         />
@@ -678,7 +702,7 @@ class Class extends Component {
                   <button
                     type="reset"
                     className="btn btn-sm btn-danger"
-                    onClick={this.onResetClick()}
+                    onClick={() => this.onResetClick()}
                   >
                     <i className="fa fa-ban" /> Nulstil
                   </button>

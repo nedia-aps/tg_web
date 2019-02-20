@@ -24,6 +24,20 @@ class Teacher extends Component {
     this.nameInput.focus();
   }
 
+  onResetClick() {
+    this.setState(
+      {
+        name: '',
+        nameError: false,
+        userName: '',
+        email: '',
+        emailError: false,
+        phone: '',
+      },
+      () => this.nameInput.focus(),
+    );
+  }
+
   onValueChange(propertyName, event) {
     const { value } = event.target;
     this.setState({ [propertyName]: value });
@@ -227,7 +241,11 @@ class Teacher extends Component {
                   <i className="fa fa-dot-circle-o" />
                   Gem
                 </button>
-                <button type="reset" className="btn btn-sm btn-danger">
+                <button
+                  type="reset"
+                  className="btn btn-sm btn-danger"
+                  onClick={() => this.onResetClick()}
+                >
                   <i className="fa fa-ban" /> Nulstil
                 </button>
               </div>
