@@ -37,7 +37,7 @@ class Dashboard extends Component {
 
   render() {
     const { dashboardStat } = this.props;
-    console.log(dashboardStat);
+    // console.log(dashboardStat);
     return (
       <div className="animated fadeIn">
         <div className="row">
@@ -107,6 +107,7 @@ class Dashboard extends Component {
               <div className="chart-wrapper" style={{ position: 'relative' }}>
                 <div>
                   {dashboardStat &&
+                    dashboardStat.maanedlog.procent !== 'NaN' &&
                     this.renderSpeedo(dashboardStat.maanedlog.procent)}
                   {dashboardStat &&
                   dashboardStat.maanedlog.maanedtotallog > 0 ? (

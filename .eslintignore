@@ -33,6 +33,7 @@ node_modules
 .DS_Store
 
 # App packaged
+build/**
 build/service-worker.js
 build/static/js/*.js
 
