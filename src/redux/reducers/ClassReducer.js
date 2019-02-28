@@ -142,7 +142,7 @@ export default (state = INITIAL_STATE, action) => {
         timeLog: Object,
         loading: false,
         missingLog: [],
-        dashboardStat: Object,
+        dashboardStat: null,
         classData: {},
         name: '',
         days: 0,

@@ -102,7 +102,9 @@ class TimeLog extends Component {
                 </h2>
                 <div className="chart-wrapper">
                   <div style={{ textAlign: 'center' }}>
-                    {timeLog && this.renderSpeedo(logged / totalHours)}
+                    {timeLog &&
+                      totalHours > 0 &&
+                      this.renderSpeedo(logged / totalHours)}
 
                     <p
                       style={{
