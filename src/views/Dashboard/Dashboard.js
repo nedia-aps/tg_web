@@ -74,7 +74,6 @@ class Dashboard extends Component {
                   ) : (
                     ''
                   )}
-
                   {dashboardStat && dashboardStat.ugelog.totallog > 0 ? (
                     <p
                       style={{
