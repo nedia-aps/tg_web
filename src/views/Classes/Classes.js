@@ -3,15 +3,21 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 import Loadmask from 'react-redux-loadmask';
+import _ from 'lodash';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import * as classActions from '../../redux/actions';
 
 class Classess extends Component {
   constructor(props, context) {
     super(props, context);
+    this.state = {
+      sortBy: 'name',
+      order: 'asc',
+    };
     this.handleEditClick = this.handleEditClick.bind(this);
     this.handleLogClick = this.handleLogClick.bind(this);
     this.deleteConfirm = this.deleteConfirm.bind(this);
+    this.changeSort = this.changeSort.bind(this);
   }
 
   // eslint-disable-next-line
@@ -63,9 +69,21 @@ class Classess extends Component {
     return `${dd}/${mm}/${yyyy}`;
   };
 
+  changeSort(sort) {
+    const { order, sortBy } = this.state;
+    let newOrder;
+    if (sortBy === sort) {
+      newOrder = order === 'asc' ? 'desc' : 'asc';
+    } else {
+      newOrder = 'asc';
+    }
+    this.setState({ sortBy: sort, order: newOrder });
+  }
+
   render() {
     const { classesList, history, className } = this.props;
-    const { danger } = this.state;
+    const { danger, sortBy, order } = this.state;
+    const sortedList = _.orderBy(classesList, sortBy, order);
     // eslint-disable-next-line
     const loadingImg = require('../../images/loading.gif');
     return (
@@ -112,7 +130,18 @@ class Classess extends Component {
                   <table className="table table-bordered table-striped table-sm">
                     <thead>
                       <tr>
-                        <th>Hold</th>
+                        <th onClick={() => this.changeSort('name')}>
+                          Hold
+                          {sortBy === 'name' && (
+                            <i
+                              className={
+                                order === 'asc'
+                                  ? `fa fa-sort-down pull-right`
+                                  : `fa fa-sort-up pull-right`
+                              }
+                            />
+                          )}
+                        </th>
                         <th>Start dato</th>
                         <th>Slut dato</th>
                         <th>Start tid </th>
@@ -123,7 +152,7 @@ class Classess extends Component {
                       </tr>
                     </thead>
                     <tbody>
-                      {classesList.map(u => (
+                      {sortedList.map(u => (
                         <tr key={u.id}>
                           <td>{u.name}</td>
                           <td>{this.dateFormate(u.startDateTime)}</td>

@@ -13,7 +13,7 @@ class Teachers extends Component {
     this.state = {
       danger: false,
       authId: '',
-      sortBy: 'name',
+      sortBy: 'hold',
       order: 'asc',
     };
     this.handleClick = this.handleClick.bind(this);
