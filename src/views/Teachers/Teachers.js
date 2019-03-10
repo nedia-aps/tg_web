@@ -82,7 +82,7 @@ class Teachers extends Component {
         <div className="animated fadeIn">
           <Modal isOpen={danger} className={`modal-danger ${className}`}>
             <ModalHeader toggle={this.toggleDanger}>Slet</ModalHeader>
-            <ModalBody>Er du sikker på du vil slette denne burger?</ModalBody>
+            <ModalBody>Er du sikker på du vil slette denne bruger?</ModalBody>
             <ModalFooter>
               <Button color="primary" onClick={this.deleteConfirm}>
                 Slet
